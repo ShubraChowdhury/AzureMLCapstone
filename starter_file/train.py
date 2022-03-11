@@ -13,7 +13,8 @@ run = Run.get_context()
 
 def main():
     
-    url = 'https://archive.ics.uci.edu/ml/machine-learning-databases/00519/heart_failure_clinical_records_dataset.csv'
+    # Original Data File source https://archive.ics.uci.edu/ml/machine-learning-databases/00639/Maternal%20Health%20Risk%20Data%20Set.csv
+    url = 'https://github.com/ShubraChowdhury/AzureMLCapstone/blob/master/starter_file/Maternal_Health_Risk_Data_Set.csv'
     data = TabularDatasetFactory.from_delimited_files(url)
     x = data.to_pandas_dataframe()
     y = x.pop("DEATH_EVENT")    
