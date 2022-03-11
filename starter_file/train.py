@@ -12,14 +12,6 @@ from azureml.data.dataset_factory import TabularDatasetFactory
 run = Run.get_context()
 
 def main():
-    
-    # Original Data File source https://archive.ics.uci.edu/ml/machine-learning-databases/00639/Maternal%20Health%20Risk%20Data%20Set.csv
-    url = 'https://github.com/ShubraChowdhury/AzureMLCapstone/blob/master/starter_file/Maternal_Health_Risk_Data_Set.csv'
-    data = TabularDatasetFactory.from_delimited_files(url)
-    x = data.to_pandas_dataframe()
-    y = x.pop("DEATH_EVENT")    
-    
-    x_train, x_test, y_train, y_test = train_test_split(x, y)
 
     parser = argparse.ArgumentParser()
 
@@ -32,6 +24,16 @@ def main():
     run.log("Regularization Strength:", np.float(args.C))
     run.log("Max iterations:", np.int(args.max_iter))
     run.log("Algorithm: ", args.solver)
+    
+    # Original Data File source https://archive.ics.uci.edu/ml/machine-learning-databases/00639/Maternal%20Health%20Risk%20Data%20Set.csv
+    url = 'https://archive.ics.uci.edu/ml/machine-learning-databases/00639/Maternal%20Health%20Risk%20Data%20Set.csv'
+    data = TabularDatasetFactory.from_delimited_files(url)
+    x = data.to_pandas_dataframe()
+    y = x.pop("RiskLevel")    
+    
+    x_train, x_test, y_train, y_test = train_test_split(x, y,test_size=0.3, random_state=24)
+
+
 
     model = LogisticRegression(solver=args.solver, C=args.C, max_iter=args.max_iter).fit(x_train, y_train)
 
