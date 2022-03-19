@@ -1,4 +1,6 @@
 from sklearn.linear_model import LogisticRegression
+import subprocess 
+subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'pandas'])
 import numpy as np
 import pandas as pd
 import argparse
@@ -17,10 +19,12 @@ def main():
 
     parser.add_argument('--C', type=float, default=1.0, help="Inverse of regularization strength. Smaller values cause stronger regularization")
     parser.add_argument('--max_iter', type=int, default=100, help="Maximum number of iterations to converge")
-    #solver{‘newton-cg’, ‘lbfgs’, ‘liblinear’, ‘sag’, ‘saga’}, default=’lbfgs’
+    #solver{ï¿½newton-cgï¿½, ï¿½lbfgsï¿½, ï¿½liblinearï¿½, ï¿½sagï¿½, ï¿½sagaï¿½}, default=ï¿½lbfgsï¿½
     parser.add_argument('--solver', type=str, default='lbfgs', help="chose the algorithm to train the model")
 
     args = parser.parse_args()
+
+    run = Run.get_context()
 
     run.log("Regularization Strength:", np.float(args.C))
     run.log("Max iterations:", np.int(args.max_iter))
