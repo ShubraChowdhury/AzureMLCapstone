@@ -19,7 +19,7 @@ def main():
 
     parser.add_argument('--C', type=float, default=1.0, help="Inverse of regularization strength. Smaller values cause stronger regularization")
     parser.add_argument('--max_iter', type=int, default=100, help="Maximum number of iterations to converge")
-    #solver{�newton-cg�, �lbfgs�, �liblinear�, �sag�, �saga�}, default=�lbfgs�
+    #solver{newton-cg, lbfgs, liblinear, sag, saga}, default=lbfgs
     parser.add_argument('--solver', type=str, default='lbfgs', help="chose the algorithm to train the model")
 
     args = parser.parse_args()
