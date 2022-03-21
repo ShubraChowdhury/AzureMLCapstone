@@ -11,6 +11,18 @@ import joblib
 from sklearn.model_selection import train_test_split
 from azureml.core.run import Run
 from azureml.data.dataset_factory import TabularDatasetFactory
+
+def clean_data(data):
+    # Dict for cleaning data
+    
+
+    # Clean and one hot encode data
+    x = data.to_pandas_dataframe().dropna()
+    y = x.pop("RiskLevel")   
+
+    return x,y
+
+
 def main():
 
     parser = argparse.ArgumentParser()
@@ -31,10 +43,10 @@ def main():
     
     # Original Data File source https://archive.ics.uci.edu/ml/machine-learning-databases/00639/Maternal%20Health%20Risk%20Data%20Set.csv
     url = 'https://archive.ics.uci.edu/ml/machine-learning-databases/00639/Maternal%20Health%20Risk%20Data%20Set.csv'
-    data = TabularDatasetFactory.from_delimited_files(url)
-    x = data.to_pandas_dataframe()
-    y = x.pop("RiskLevel")    
-    
+    ds = TabularDatasetFactory.from_delimited_files(url)
+    #x = data.to_pandas_dataframe()
+    #y = x.pop("RiskLevel")    
+    x, y = clean_data(ds)
     x_train, x_test, y_train, y_test = train_test_split(x, y,test_size=0.2, random_state=24)
     #print(y_text.unique())
 
