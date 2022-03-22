@@ -163,6 +163,9 @@ Following are the results:
 - AUC_micro 0.9290838330968461
 - f1_score_micro 0.8199899776775545
 
+[AutoMLConfig](https://docs.microsoft.com/en-us/python/api/azureml-train-automl-client/azureml.train.automl.automlconfig.automlconfig?view=azure-ml-py)
+The cross validation checks overfitting and for computational reasons pre-defined timeout was set to 20 Minutes  which limits number of Models that could be built.Model has Accuracy as primary metric.
+
 I have restricted the experiment time out to 20 minutes as this was my sixth try and I was loosing the opportuniny to complete the project, in an ideal scenerio I will increase experiment time at the same time will increase number of cross validation. Model was trained on very small dataset which couldnt explore the full potential, i could have extrapolate data using multiple methods as resampling training data, Adaptive Synthetic,Synthetic Minority Over-sampling Technique SMOTE etc. 
 
 *TODO* Remeber to provide screenshots of the `RunDetails` widget as well as a screenshot of the best model trained with it's parameters.
@@ -191,6 +194,46 @@ I have restricted the experiment time out to 20 minutes as this was my sixth try
 
 ## Hyperparameter Tuning
 *TODO*: What kind of model did you choose for this experiment and why? Give an overview of the types of parameters and their ranges used for the hyperparameter search
+In this train.py is the entry script and LogisticRegression has been use. Hyperparameter uses RandomParameterSampling as I was expecting that random sampling over the hyperparameter search space using RandomParameterSampling in our parameter sampler would  reduces computation time and still find a reasonably models when compared to GridParameterSampling methodology where all the possible values from the search space are used.
+
+BanditPolicy is used is an early stopping policy. It cuts more runs than a conservative policy like the MedianStoppingPolicy, hence saving the computational time significantly.
+BanditPolicy reference [BanditPolicy reference](https://docs.microsoft.com/en-us/azure/machine-learning/how-to-tune-hyperparameters)
+For early stopping from BanditPolicy (azureml.train.hyperdrive.policy import BanditPolicy) was used , it takes evaluation_interval, slack_factor, slack_amount and delay_evaluation. 
+Bandit policy is based on slack factor/slack amount and evaluation interval. Bandit ends runs when the primary metric isn't within the specified slack factor/slack amount of the most successful run.
+
+evaluation_interval: the frequency of applying the policy. Each time the training script logs the primary metric counts as one interval. An evaluation_interval of 1 will apply the policy every time the training script reports the primary metric. An evaluation_interval of 2 will apply the policy every other time. If not specified, evaluation_interval is set to 1 by default.
+
+```
+early_termination_policy = BanditPolicy(evaluation_interval=1, slack_factor=0.1)
+ps = RandomParameterSampling(
+    {
+"--C" : choice(0.01,0.1,1) ,     
+"--max_iter" : choice(20,40,70,100,150),
+}
+)  
+
+if "training" not in os.listdir():
+    os.mkdir("./training")
+
+# Setup environment for your training run
+sklearn_env = Environment.from_conda_specification(name='sklearn-env', file_path='project_environment.yml')
+
+# Create a ScriptRunConfig Object to specify the configuration details of your training job
+#SKLearn(source_directory, *, compute_target=None, vm_size=None, vm_priority=None, entry_script=None, script_params=None, use_docker=True, custom_docker_image=None, image_registry_details=None, user_managed=False, conda_packages=None, pip_packages=None, conda_dependencies_file_path=None, pip_requirements_file_path=None, conda_dependencies_file=None, pip_requirements_file=None, environment_variables=None, environment_definition=None, inputs=None, shm_size=None, resume_from=None, max_run_duration_seconds=None, framework_version=None, _enable_optimized_mode=False, _disable_validation=True, _show_lint_warnings=False, _show_package_warnings=False)
+skl_estimator = SKLearn(source_directory="./",entry_script='train.py',compute_target=amlcompute_cluster_name)
+
+
+hyperdrive_run_config =  HyperDriveConfig(
+        hyperparameter_sampling=ps,
+        primary_metric_name='Accuracy',
+        primary_metric_goal=PrimaryMetricGoal.MAXIMIZE,
+        max_total_runs = 10, 
+        max_concurrent_runs =4,
+        policy=early_termination_policy,
+        estimator=skl_estimator
+)
+```
+
 
 
 ### Results
