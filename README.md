@@ -194,7 +194,11 @@ I have restricted the experiment time out to 20 minutes as this was my sixth try
 
 ## Hyperparameter Tuning
 *TODO*: What kind of model did you choose for this experiment and why? Give an overview of the types of parameters and their ranges used for the hyperparameter search
+
+
 In this train.py is the entry script and LogisticRegression has been use. Hyperparameter uses RandomParameterSampling as I was expecting that random sampling over the hyperparameter search space using RandomParameterSampling in our parameter sampler would  reduces computation time and still find a reasonably models when compared to GridParameterSampling methodology where all the possible values from the search space are used.
+
+Scikit-learn Logistic Regression ( from sklearn.linear_model import LogisticRegression) , RandomParameterSampling from (from azureml.train.hyperdrive.sampling import RandomParameterSampling) was used  "--C" : choice(0.01,0.1,1) ,   "--max_iter" : choice(20,40,70,100,150), here  C as inverse regularization C = 1/λ  which had a choice between 0.01, 0.1 and 1 , max_iter is for max number of iteration which has a choice between 20 ,40,70,100 and 150.
 
 BanditPolicy is used is an early stopping policy. It cuts more runs than a conservative policy like the MedianStoppingPolicy, hence saving the computational time significantly.
 BanditPolicy reference [BanditPolicy reference](https://docs.microsoft.com/en-us/azure/machine-learning/how-to-tune-hyperparameters)
@@ -233,7 +237,7 @@ hyperdrive_run_config =  HyperDriveConfig(
         estimator=skl_estimator
 )
 ```
-
+In the HyperParameter experiment hyperparameter_sampling uses BanditPolicy for early termination, with accuracy as the primary metric,Due to limited available time I have restricted the maximum total run to 10 with at the max of 4 concurrent run which has caused low accuracy of 60.6% almost 20% less than the AutoML model.
 
 
 ### Results
