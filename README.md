@@ -89,6 +89,44 @@ if not found:
 ## Automated ML
 *TODO*: Give an overview of the `automl` settings and configuration you used for this experiment
 
+In this experiment I have used the following `automl` settings:
+- Experiment Timeout of  20 minutes
+- Maximum Concurrent Iterations of  5
+- Number of Cross Validations of 3
+- Primary metric is to find accuracy
+
+In this experiment I have used the following `automl` configuration:
+
+- Classification as the main task
+- `RiskLevel` as the column name that needs to be predicted
+- Enabled early stopping                             
+- Auto features                             enable_early_stopping= True,
+- ONNX Compatibality enabled in case i would like to save the model in oonx format     
+
+Below is the code snippet for `automl` 
+```
+automl_settings = {
+    "experiment_timeout_minutes": 20,
+    "max_concurrent_iterations": 5,
+    "n_cross_validations":3,
+    "primary_metric" : 'accuracy'
+}
+
+
+automl_config = AutoMLConfig(compute_target=compute_target,
+                             task = "classification",
+                             training_data=train_data,
+                             label_column_name="RiskLevel",   
+                             enable_early_stopping= True,
+                             featurization= 'auto',
+                             debug_log = "automl_errors.log",
+                             enable_onnx_compatible_models=True,
+                             **automl_settings
+                            )
+                            
+```
+
+
 ### Results
 *TODO*: What are the results you got with your automated ML model? What were the parameters of the model? How could you have improved it?
 
