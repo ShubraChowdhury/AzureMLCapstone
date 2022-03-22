@@ -1,0 +1,15 @@
+2022-03-22 18:59:03.536 - INFO - 27645 - azureml.train.automl.run._log_activity:55 - ActivityStarted: GetOutput
+2022-03-22 18:59:03.560 - INFO - 27645 - azureml.train.automl.run._log_activity:55 - ActivityStarted: GetOutput
+2022-03-22 18:59:03.580 - INFO - 27645 - azureml.train.automl.run._log_activity:55 - ActivityStarted: GetChildren
+2022-03-22 18:59:03.713 - INFO - 27645 - azureml.train.automl.run._log_activity:93 - ActivityCompleted: Activity=GetChildren, HowEnded=Success, Duration=133.71[ms]
+2022-03-22 18:59:03.778 - INFO - 27645 - azureml.train.automl.run._log_activity:93 - ActivityCompleted: Activity=GetOutput, HowEnded=Success, Duration=218.05[ms]
+2022-03-22 18:59:03.778 - INFO - 27645 - azureml.train.automl._model_download_utilities._log_activity:55 - ActivityStarted: DownloadModel
+2022-03-22 18:59:13.797 - INFO - 27645 - azureml.automl.runtime.distributed.utilities.horovod_initialized:70 - Horovod not found in current environment. Distribution via Horovod will be disabled.
+2022-03-22 18:59:16.143 - INFO - 27645 - azureml.automl.runtime.featurization.data_transformer.__init__:189 - Feature sweeping enabled: False
+2022-03-22 18:59:16.150 - INFO - 27645 - azureml.automl.runtime.featurization.data_transformer.__init__:190 - Feature sweeping timeout: 86400
+2022-03-22 18:59:18.311 - INFO - 27645 - azureml.train.automl._model_download_utilities._log_activity:93 - ActivityCompleted: Activity=DownloadModel, HowEnded=Success, Duration=14532.09[ms]
+2022-03-22 18:59:18.332 - INFO - 27645 - azureml.train.automl.run._log_activity:93 - ActivityCompleted: Activity=GetOutput, HowEnded=Success, Duration=14796.14[ms]
+2022-03-22 18:59:47.873 - INFO - 27645 - azureml.train.automl.run._log_activity:55 - ActivityStarted: RegisterModel
+2022-03-22 18:59:47.900 - INFO - 27645 - azureml.train.automl.run._log_activity:55 - ActivityStarted: GetChildren
+2022-03-22 18:59:48.028 - INFO - 27645 - azureml.train.automl.run._log_activity:93 - ActivityCompleted: Activity=GetChildren, HowEnded=Success, Duration=127.46[ms]
+2022-03-22 18:59:48.951 - INFO - 27645 - azureml.train.automl.run._log_activity:93 - ActivityCompleted: Activity=RegisterModel, HowEnded=Success, Duration=1077.88[ms]
