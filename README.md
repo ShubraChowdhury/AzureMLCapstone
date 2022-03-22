@@ -243,7 +243,34 @@ In the HyperParameter experiment hyperparameter_sampling uses BanditPolicy for e
 ### Results
 *TODO*: What are the results you got with your model? What were the parameters of the model? How could you have improved it?
 
+Hyperdrive model provided an accuracy of 60.6%, at Regularization strength of 0.1 and at Max Iteration of 70.,Due to limited available time I have restricted the maximum total run to 10 with at the max of 4 concurrent run which has caused low accuracy of 60.6% almost 20% less than the AutoML model. Increasing the maximum run and large data volume could provide better results.
+ 
 *TODO* Remeber to provide screenshots of the `RunDetails` widget as well as a screenshot of the best model trained with it's parameters.
+### Fig14: New  Compute Cluster for  Hyperdrive experiment
+![image](https://user-images.githubusercontent.com/32674614/159407569-52410d8d-d9b2-4dac-955d-a6750cb4fe29.png)
+### Fig15: Experiment Running
+![image](https://user-images.githubusercontent.com/32674614/159407652-ab6beb91-aea7-42a7-a792-5d0b92050a59.png)
+### Fig16: Experiment a run completed and a run in queue
+![image](https://user-images.githubusercontent.com/32674614/159407749-dfcad436-df78-44cc-b8a6-f40bde73792c.png)
+### Fig17: Experiment in progress
+![image](https://user-images.githubusercontent.com/32674614/159407834-bb526404-bae9-4532-9100-7d766a4b1781.png)
+### Fig18: Experiment Completed
+![image](https://user-images.githubusercontent.com/32674614/159407884-d04ef9e5-0759-457a-a648-7762845d33c0.png)
+### Fig19: Experiment Result
+![image](https://user-images.githubusercontent.com/32674614/159407971-37977598-f68c-419e-947d-89976304c3be.png)
+### Fig20: Experiment Completed
+![image](https://user-images.githubusercontent.com/32674614/159408038-45daa47b-1a15-4553-bf74-e9e7d54c5bc5.png)
+### Fig21: Experiment Result
+![image](https://user-images.githubusercontent.com/32674614/159408157-4a92838b-8c04-402f-909b-ba381accc929.png)
+### Fig22: Experiment Childrun Accuracy
+![image](https://user-images.githubusercontent.com/32674614/159408213-0a5b38e6-9319-4225-ac32-1eb0abbcf05c.png)
+### Fig23: Endpoint
+![image](https://user-images.githubusercontent.com/32674614/159408326-90c0e811-b46b-493f-bcd2-fdba2e17b86e.png)
+### Fig24.1: Endpoint
+![image](https://user-images.githubusercontent.com/32674614/159408383-048c2f29-2ef2-467c-a077-8bca4b0d7eef.png)
+### Fig24.2: Endpoint
+![image](https://user-images.githubusercontent.com/32674614/159408421-c46c174b-3813-4deb-b763-86193d4a90c5.png)
+
 
 ## Model Deployment
 *TODO*: Give an overview of the deployed model and instructions on how to query the endpoint with a sample input.
