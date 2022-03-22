@@ -16,6 +16,10 @@ Dataset used in this project is [Maternal Health Risk data from UCI's ML Dataset
 
 The above information is used by the models to predict "Risk Level"
 
+### Fig-1: Shows dataset registered using URI 
+![DataSetRegistered](https://user-images.githubusercontent.com/32674614/159392065-e07eaf8d-e7b4-4019-bab6-28a450cabe15.png)
+
+
 ### Overview
 *TODO*: Explain about the data you are using and where you got it from.
 
