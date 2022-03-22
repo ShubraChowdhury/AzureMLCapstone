@@ -275,6 +275,27 @@ Hyperdrive model provided an accuracy of 60.6%, at Regularization strength of 0.
 ## Model Deployment
 *TODO*: Give an overview of the deployed model and instructions on how to query the endpoint with a sample input.
 
+From Models trained from the above two approaches, the AutoML Experiment gave accuracy of 82% while the HyperDrive Experiment gave accuracy of 60.6%. The performance of AutoML model exceeded the HyperDrive performance by close to 20%, My work was to register AutoML model as the best model and deployed as a web service and enable Application Insights . To test it out I have actually deployed both model.
+
+[Model Deployment Reference](https://docs.microsoft.com/en-us/azure/machine-learning/how-to-deploy-and-where?tabs=python)
+The workflow is similar no matter where you deploy your model:
+
+- Register the model.
+- Prepare an entry script.
+- Prepare an inference configuration.
+- Deploy the model locally to ensure everything works.
+- Choose a compute target.
+- Deploy the model to the cloud.
+- Test the resulting web service.
+
+Registering a model
+```
+automl_model_registered = remote_run.register_model(model_name='Maternal_Health_Risk_AutoML_model') 
+automl_model_registered.download(target_dir="outputs", exist_ok=True)
+```
+Also, we have created inference configuration and edited deploy configuration settings for the deployment. The inference configuration and settings explain the set up of the web service that will include the deployed model. Environment settings and scoring.py script file should be passed the InferenceConfig. The deployed model was configured in Azure Container Instance(ACI) with cpu_cores and memory_gb parameters initialized as 1.
+
+
 ## Screen Recording
 *TODO* Provide a link to a screen recording of the project in action. Remember that the screencast should demonstrate:
 - A working model
