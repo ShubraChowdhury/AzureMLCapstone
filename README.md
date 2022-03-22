@@ -325,7 +325,7 @@ Above inference configuration and settings explain the set up of the web service
 
 ## Screen Recording
 *TODO* Provide a link to a screen recording of the project in action. Remember that the screencast should demonstrate:
-- A working model
+- [End to End](https://youtu.be/SeVWd5EGX50)
 - Demo of the deployed  model
 - Demo of a sample request sent to the endpoint and its response
 
