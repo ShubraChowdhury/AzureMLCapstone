@@ -130,6 +130,30 @@ automl_config = AutoMLConfig(compute_target=compute_target,
 ### Results
 *TODO*: What are the results you got with your automated ML model? What were the parameters of the model? How could you have improved it?
 
+AutoML experiment in 20 minutes has trained data on a total of 38 models , out of which the `VotingEnsemble` model is the best model with 82% accuracy.
+Following are the results:
+- average_precision_score_micro 0.8730812741180376
+- AUC_macro 0.9226793705273387
+- average_precision_score_weighted 0.8647659722703661
+- weighted_accuracy 0.8226841844282767
+- f1_score_weighted 0.8189540322232832
+- recall_score_weighted 0.8199899776775545
+- precision_score_weighted 0.819593453577947
+- recall_score_micro 0.8199899776775545
+- precision_score_macro 0.8228526959653496
+- recall_score_macro 0.8187646372860341
+- balanced_accuracy 0.8187646372860341
+- log_loss 0.6138810951918391
+- AUC_weighted 0.9189162547687276
+- matthews_correlation 0.7239247750212834
+- f1_score_macro 0.8199474069639092
+- average_precision_score_macro 0.8675376617497034
+- accuracy 0.8199899776775545
+- precision_score_micro 0.8199899776775545
+- norm_macro_recall 0.7281469559290512
+- AUC_micro 0.9290838330968461
+- f1_score_micro 0.8199899776775545
+
 *TODO* Remeber to provide screenshots of the `RunDetails` widget as well as a screenshot of the best model trained with it's parameters.
 
 ## Hyperparameter Tuning
