@@ -155,6 +155,28 @@ Following are the results:
 - f1_score_micro 0.8199899776775545
 
 *TODO* Remeber to provide screenshots of the `RunDetails` widget as well as a screenshot of the best model trained with it's parameters.
+### Fig-5: AutoML experiment created 
+![image](https://user-images.githubusercontent.com/32674614/159400814-24218e63-483d-4885-9869-4c563fa13f16.png)
+### Fig-6: AutoML experiment running
+![image](https://user-images.githubusercontent.com/32674614/159400887-ce756000-1851-4457-bbe0-dcca5cc81adf.png)
+### Fig-7: AutoML child runs in progress
+![image](https://user-images.githubusercontent.com/32674614/159400958-e2c46ddc-b459-4ae9-bd31-2d71ccaa431b.png)
+### Fig-8: Best AutoML model `VotingEnsemble`
+![image](https://user-images.githubusercontent.com/32674614/159400994-89a43ed3-102b-42c9-8394-7df65a4dd1b2.png)
+### Fig-9: Accuracy for `VotingEnsemble` 
+![image](https://user-images.githubusercontent.com/32674614/159401064-4921d2ce-3e26-4bac-b9f3-c655c91f459a.png)
+### Fig-10: Feature Importance with BS has the highest
+![image](https://user-images.githubusercontent.com/32674614/159401125-b5f27166-c7ba-4e00-b37c-1251b81d0b16.png)
+### Fig11.1: Model Metrics
+![image](https://user-images.githubusercontent.com/32674614/159401273-d19e3ed6-4669-4036-93cf-26a84856d1df.png)
+### Fig11.2: Model Metrics continued..
+![image](https://user-images.githubusercontent.com/32674614/159401312-59fc0ca6-e397-42bb-bb04-c25022165789.png)
+### Fig11.3: Model Metrics continued..
+![image](https://user-images.githubusercontent.com/32674614/159401357-6bfbfbcd-d548-4441-8d75-f3c585c593b3.png)
+### Fig12: Endpoint View
+![image](https://user-images.githubusercontent.com/32674614/159401495-80dc16e0-a74c-4122-bb00-1d866f979bde.png)
+### Fig13: `VotingEnsemble` Deployed 
+![image](https://user-images.githubusercontent.com/32674614/159401734-346820f1-fced-4cc5-b85b-ed1491cb1728.png)
 
 ## Hyperparameter Tuning
 *TODO*: What kind of model did you choose for this experiment and why? Give an overview of the types of parameters and their ranges used for the hyperparameter search
