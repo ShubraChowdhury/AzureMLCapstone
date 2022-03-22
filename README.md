@@ -326,8 +326,9 @@ Above inference configuration and settings explain the set up of the web service
 ## Screen Recording
 *TODO* Provide a link to a screen recording of the project in action. Remember that the screencast should demonstrate:
 - [End to End](https://youtu.be/SeVWd5EGX50)
-- Demo of the deployed  model
-- Demo of a sample request sent to the endpoint and its response
+- [HyperParam End to End](https://youtu.be/Juap_0v5wU4)
+- [AutoML](https://youtu.be/wX6XIEO47HU)
+- [AutoML Model](https://youtu.be/ogPnH-2apuY)
 
 ## Standout Suggestions
 *TODO (Optional):* This is where you can provide information about any standout suggestions that you have attempted.
