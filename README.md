@@ -293,7 +293,34 @@ Registering a model
 automl_model_registered = remote_run.register_model(model_name='Maternal_Health_Risk_AutoML_model') 
 automl_model_registered.download(target_dir="outputs", exist_ok=True)
 ```
-Also, we have created inference configuration and edited deploy configuration settings for the deployment. The inference configuration and settings explain the set up of the web service that will include the deployed model. Environment settings and scoring.py script file should be passed the InferenceConfig. The deployed model was configured in Azure Container Instance(ACI) with cpu_cores and memory_gb parameters initialized as 1.
+Sourcing project environment
+```
+myenv = Environment.from_conda_specification(name="env", file_path="project_environment.yml")
+```
+Configuring Interface
+```
+inference_config = InferenceConfig(entry_script="scoreautoml.py",environment=myenv)
+```
+Deploy Configuration
+```
+deployment_config = AciWebservice.deploy_configuration(cpu_cores=1, memory_gb = 4, 
+                                                       enable_app_insights=True, 
+                                                       description='Maternal Health Risk AutoML model' )
+model = Model(ws,'Maternal_Health_Risk_AutoML_model')
+```
+
+Creating a service and deploying the service
+```
+service=Model.deploy(workspace=ws,
+                    name="maternal-health-risk-dep-service",
+                    models=[model],
+                    inference_config=inference_config,
+                    deployment_config=deployment_config)
+
+service.wait_for_deployment(show_output=True)
+
+```
+Above inference configuration and settings explain the set up of the web service that  includes the deployed model. Environment settings and scoreautoml.py script file should be passed the InferenceConfig. The deployed model was configured in Azure Container Instance(ACI) with one cpu_cores and 4 memory_gb parameters.
 
 
 ## Screen Recording
