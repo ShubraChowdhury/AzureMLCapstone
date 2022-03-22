@@ -44,6 +44,23 @@ My task involves predicting Maternal "Risk Level" based on Age, SystolicBP, Dias
 
 ### Access
 *TODO*: Explain how you are accessing the data in your workspace.
+As a prerequisite I had created a Compute Cluster named "automl-com-clst" , specifcaly to be used by AutoML model. It used a VM "STANDARD_D2_V2" with a maximum node of 4
+
+Following is the code snippet used for creating compute cluster
+```
+amlcompute_cluster_name = "automl-com-clst" 
+try:
+    compute_target = ComputeTarget(workspace=ws, name=amlcompute_cluster_name)
+    print('Found existing cluster, use it.')
+except ComputeTargetException:
+    compute_config = AmlCompute.provisioning_configuration(vm_size='STANDARD_D2_V2', max_nodes=4)
+    compute_target = ComputeTarget.create(ws, amlcompute_cluster_name, compute_config)
+
+compute_target.wait_for_completion(show_output=True, min_node_count = 1, timeout_in_minutes = 10)
+```
+### Fig-4 Compute Cluster Created
+![image](https://user-images.githubusercontent.com/32674614/159396842-f701cc3e-a105-4a1b-8502-d6dcb4b7ada0.png)
+
 
 Data is access from [Maternal Health Risk data from UCI's ML Dataset Repository](https://archive.ics.uci.edu/ml/machine-learning-databases/00639/Maternal%20Health%20Risk%20Data%20Set.csv). Both jupyter notebook access the data in similar way. First it looks for available dataset that is registered with the name "Maternal_Health_Risk_Data_Set", if the data is not found and not registered it uses Dataset from azureml.core.dataset package to fetch the dataset and then register the same in workspace
 
