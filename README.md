@@ -18,6 +18,16 @@ The above information is used by the models to predict "Risk Level"
 
 ### Fig-1: Shows dataset registered using URI 
 ![DataSetRegistered](https://user-images.githubusercontent.com/32674614/159392065-e07eaf8d-e7b4-4019-bab6-28a450cabe15.png)
+### Fig-2: Sample Dataset
+![Sample Dataset](https://user-images.githubusercontent.com/32674614/159392189-77e62a3a-14fa-4359-94e3-f0837b7b2d7a.png)
+### Fig-3.1: Data Profile
+![Data Profile](https://user-images.githubusercontent.com/32674614/159392269-8e5b8259-4a52-4d34-b5b4-cbd871e34eee.png)
+### Fig-3.2: Data Profile
+![image](https://user-images.githubusercontent.com/32674614/159392328-8ba7b3de-0899-4448-a19e-13e9f8960092.png)
+### Fig-3.3: Data Profile
+![image](https://user-images.githubusercontent.com/32674614/159392358-f64b1939-0383-4cc4-ac9f-c873fcf4de0f.png)
+### Fig-3.4: Data Profile
+![image](https://user-images.githubusercontent.com/32674614/159392389-4d3ea79c-3bdd-4214-bc7e-d8976a53ee0e.png)
 
 
 ### Overview
