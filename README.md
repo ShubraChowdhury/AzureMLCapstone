@@ -100,8 +100,11 @@ In this experiment I have used the following `automl` configuration:
 - Classification as the main task
 - `RiskLevel` as the column name that needs to be predicted
 - Enabled early stopping                             
-- Auto features                             enable_early_stopping= True,
+- Auto features                             
+- enable_early_stopping= True,
 - ONNX Compatibality enabled in case i would like to save the model in oonx format     
+
+
 
 Below is the code snippet for `automl` 
 ```
@@ -125,7 +128,13 @@ automl_config = AutoMLConfig(compute_target=compute_target,
                             )
                             
 ```
-
+- n_cross_validations : Is a required value.   How many cross validations to perform when user validation data is not specified. Specify validation_data to provide validation data, otherwise set n_cross_validations or validation_size to extract validation data out of the specified training data. 
+- experiment_timeout_minutes : Is the time beyond which the experiment will stop 
+- task : The type of task to run. Values can be 'classification', 'regression', or 'forecasting' depending on the type of automated ML problem to solve, I have selected "Classification"
+- primary_metric : The metric that Automated Machine Learning will optimize for model selection.  I have selected "Accuracy"
+- label_column_name : The training labels to use when fitting pipelines during an experiment.
+-  ebable_early_stopping : Allowing AutoMl experiment to stop early when conditions are met
+- enable_onnx_compatible_models: If set to YES this allows the model to be saved as Onnex model  
 
 ### Results
 *TODO*: What are the results you got with your automated ML model? What were the parameters of the model? How could you have improved it?
@@ -153,6 +162,8 @@ Following are the results:
 - norm_macro_recall 0.7281469559290512
 - AUC_micro 0.9290838330968461
 - f1_score_micro 0.8199899776775545
+
+I have restricted the experiment time out to 20 minutes as this was my sixth try and I was loosing the opportuniny to complete the project, in an ideal scenerio I will increase experiment time at the same time will increase number of cross validation. Model was trained on very small dataset which couldnt explore the full potential, i could have extrapolate data using multiple methods as resampling training data, Adaptive Synthetic,Synthetic Minority Over-sampling Technique SMOTE etc. 
 
 *TODO* Remeber to provide screenshots of the `RunDetails` widget as well as a screenshot of the best model trained with it's parameters.
 ### Fig-5: AutoML experiment created 
