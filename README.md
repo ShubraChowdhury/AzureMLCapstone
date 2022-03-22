@@ -20,24 +20,54 @@ The above information is used by the models to predict "Risk Level"
 ![DataSetRegistered](https://user-images.githubusercontent.com/32674614/159392065-e07eaf8d-e7b4-4019-bab6-28a450cabe15.png)
 ### Fig-2: Sample Dataset
 ![Sample Dataset](https://user-images.githubusercontent.com/32674614/159392189-77e62a3a-14fa-4359-94e3-f0837b7b2d7a.png)
-### Fig-3.1: Data Profile
+### Fig-2.1 Exceptions in Dataset
+![image](https://user-images.githubusercontent.com/32674614/159393528-6ba99506-ffd8-456c-8e6d-293bfc6932aa.png)
+### Fig-3.1: Data Profile for Age and SystolicBP
 ![Data Profile](https://user-images.githubusercontent.com/32674614/159392269-8e5b8259-4a52-4d34-b5b4-cbd871e34eee.png)
-### Fig-3.2: Data Profile
+### Fig-3.2: Data Profile for HeartRate and Risk Level
 ![image](https://user-images.githubusercontent.com/32674614/159392328-8ba7b3de-0899-4448-a19e-13e9f8960092.png)
-### Fig-3.3: Data Profile
+### Fig-3.3: Data Profile for BS and Body temprature
 ![image](https://user-images.githubusercontent.com/32674614/159392358-f64b1939-0383-4cc4-ac9f-c873fcf4de0f.png)
-### Fig-3.4: Data Profile
+### Fig-3.4: Data Profile for DiastolicBP
 ![image](https://user-images.githubusercontent.com/32674614/159392389-4d3ea79c-3bdd-4214-bc7e-d8976a53ee0e.png)
 
 
 ### Overview
-*TODO*: Explain about the data you are using and where you got it from.
+In this project, we will be using Azure Machine Learning Studio to create a model and  then deploy the best model. As per project guidelines I have used two approaches in this project to create a model:
+- Using Azure AutoML . This experiment is named as 'capstone-automl-experiment'
+- Using Azure HyperDrive. This experiment is named as 'capstone_hyperdrive_exp'
+And the best model from any of the above methods will be deployed and then consumed.
+Azure AutoML model is build using jupyter notebook "automl.ipynb" and  Azure HyperDrive is build using jupyter notebook "hyperparameter_tuning.ipynb"
 
 ### Task
-*TODO*: Explain the task you are going to be solving with this dataset and the features you will be using for it.
+My task involves predicting Maternal "Risk Level" based on Age, SystolicBP, DiastolicBP,BS,BodyTemp,HeartRate. Please refer above for data profile and data distribution.
 
 ### Access
 *TODO*: Explain how you are accessing the data in your workspace.
+
+Data is access from [Maternal Health Risk data from UCI's ML Dataset Repository](https://archive.ics.uci.edu/ml/machine-learning-databases/00639/Maternal%20Health%20Risk%20Data%20Set.csv). Both jupyter notebook access the data in similar way. First it looks for available dataset that is registered with the name "Maternal_Health_Risk_Data_Set", if the data is not found and not registered it uses Dataset from azureml.core.dataset package to fetch the dataset and then register the same in workspace
+
+Below is the code snippet to extract and register data 
+```
+found = False
+key="Maternal_Health_Risk_Data_Set" 
+description_text = "UCI machine Learning Maternal Health Risk Data Set"
+
+if key in ws.datasets.keys(): 
+        found = True
+        dataset = ws.datasets[key] 
+
+if not found:
+        # Create AML Dataset and register it into Workspace
+        example_data = 'https://archive.ics.uci.edu/ml/machine-learning-databases/00639/Maternal%20Health%20Risk%20Data%20Set.csv'
+        dataset = Dataset.Tabular.from_delimited_files(example_data)        
+        #Register Dataset in Workspace
+        dataset = dataset.register(workspace=ws,
+                                   name=key,
+                                   description=description_text)
+
+```
+
 
 ## Automated ML
 *TODO*: Give an overview of the `automl` settings and configuration you used for this experiment
