@@ -1,11 +1,12 @@
 # Capstone - Udacity Machine Learning Engineer with Microsoft Azure
 
-*TODO:* Write a short introduction to your project.
+This capstone project uses Azure ML platform and allows two forms of model building and deployment. Model used in this project helps to predict Maternal Health Risk based on multiple factors.
 
 ## Project Set Up and Installation
-*OPTIONAL:* If your project has any special installation steps, this is where you should put it. To turn this project into a professional portfolio project, you are encouraged to explain how to set up this project in AzureML.
+This project uses Azure ML environment provided by Udacity. Some of the components are Compute Instance(which gets created by the scripts deployed by Udacity team), compute cluster (which is created as a part of the project), notebook, Experiments, AtuoML, Endpoints, Datastore, Environment etc.
 
 ## Dataset
+Dataset used in this project is [Maternal Health Risk data from UCI's ML Dataset Repository]('https://archive.ics.uci.edu/ml/machine-learning-databases/00639/Maternal%20Health%20Risk%20Data%20Set.csv')
 
 ### Overview
 *TODO*: Explain about the data you are using and where you got it from.
