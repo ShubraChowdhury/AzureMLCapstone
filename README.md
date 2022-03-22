@@ -6,7 +6,15 @@ This capstone project uses Azure ML platform and allows two forms of model build
 This project uses Azure ML environment provided by Udacity. Some of the components are Compute Instance(which gets created by the scripts deployed by Udacity team), compute cluster (which is created as a part of the project), notebook, Experiments, AtuoML, Endpoints, Datastore, Environment etc.
 
 ## Dataset
-Dataset used in this project is [Maternal Health Risk data from UCI's ML Dataset Repository](https://archive.ics.uci.edu/ml/machine-learning-databases/00639/Maternal%20Health%20Risk%20Data%20Set.csv)
+Dataset used in this project is [Maternal Health Risk data from UCI's ML Dataset Repository](https://archive.ics.uci.edu/ml/machine-learning-databases/00639/Maternal%20Health%20Risk%20Data%20Set.csv). Data contains the following fields
+- Age
+- SystolicBP
+- DiastolicBP
+- BS
+- BodyTemp
+- HeartRate
+
+The above information is used by the models to predict "Risk Level"
 
 ### Overview
 *TODO*: Explain about the data you are using and where you got it from.
