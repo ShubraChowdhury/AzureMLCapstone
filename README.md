@@ -750,7 +750,19 @@ In the HyperParameter experiment hyperparameter_sampling uses BanditPolicy for e
 ### Results
 *TODO*: What are the results you got with your model? What were the parameters of the model? How could you have improved it?
 
-Hyperdrive model provided an accuracy of 60.6%, at Regularization strength of 0.1 and at Max Iteration of 70.,Due to limited available time I have restricted the maximum total run to 10 with at the max of 4 concurrent run which has caused low accuracy of 60.6% almost 20% less than the AutoML model. Increasing the maximum run and large data volume could provide better results.
+Hyperdrive model provided an accuracy of 60.6%, at Regularization strength of 0.1 and at Max Iteration of 150.,Due to limited available time I have restricted the maximum total run to 10 with at the max of 4 concurrent run which has caused low accuracy of 60.6% almost 20% less than the AutoML model. Increasing the maximum run and large data volume could provide better results.
+
+#### Model Parameters
+1. Primary Metric :'Accuracy'
+2. Maximum total runs : 20
+3. Maximum Concurrent runs:4
+4. Early termination Policy :BanditPolicy
+5. Hyperparameter Sampling: RandomParameterSampling with inverse regularization choice of (0.01,0.1,1) and Iteration of choice(20,40,70,100,150)
+
+#### How could you have improved it
+1.Prep data and address missing values, resampling training data, Adaptive Synthetic,Synthetic Minority Over-sampling Technique SMOTE
+2. Increase max_iter 
+3. Change inverse regularization and experiment with additional choices
  
 *TODO* Remeber to provide screenshots of the `RunDetails` widget as well as a screenshot of the best model trained with it's parameters.
 ### Fig14: New  Compute Cluster for  Hyperdrive experiment
