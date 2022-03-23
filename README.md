@@ -904,13 +904,59 @@ service.wait_for_deployment(show_output=True)
 ```
 Above inference configuration and settings explain the set up of the web service that  includes the deployed model. Environment settings and scoreautoml.py script file should be passed the InferenceConfig. The deployed model was configured in Azure Container Instance(ACI) with one cpu_cores and 4 memory_gb parameters.
 
+```
+Tips: You can try get_logs(): https://aka.ms/debugimage#dockerlog or local deployment: https://aka.ms/debugimage#debug-locally to debug if deployment takes longer than 10 minutes.
+Running
+2022-03-22 19:00:25+00:00 Creating Container Registry if not exists..
+2022-03-22 19:10:25+00:00 Registering the environment..
+2022-03-22 19:10:26+00:00 Building image..
+2022-03-22 19:21:40+00:00 Generating deployment configuration.
+2022-03-22 19:21:41+00:00 Submitting deployment to compute..
+2022-03-22 19:21:45+00:00 Checking the status of deployment maternal-health-risk-dep-service..
+2022-03-22 19:24:26+00:00 Checking the status of inference endpoint maternal-health-risk-dep-service.
+Succeeded
+ACI service creation operation finished, operation "Succeeded"
+```
+
+#### Query the endpoint
+
+Check if the model has been deployed correct and get the [Score URI](http://5ca7c142-8097-4d0c-bcde-bfcd82c4a7c7.southcentralus.azurecontainer.io/score)
+![image](https://user-images.githubusercontent.com/32674614/159750439-367df38a-2cf1-437f-8e87-482880fc32b4.png)
+
+I have inputed sample data "Age": 25, "SystolicBP":130 , "DiastolicBP":80 , "BS": 15, "BodyTemp": 98, "HeartRate": 86 and response was received 'high risk'
+
+```
+import json
+import requests
+scoring_uri = service.scoring_uri
+
+data = {
+  "data": [
+    {
+      "Age": 25,
+      "SystolicBP":130 ,
+      "DiastolicBP":80 ,
+      "BS": 15,
+      "BodyTemp": 98,
+      "HeartRate": 86
+          }
+  ]
+}
+# Convert to JSON string
+input_data = json.dumps(data)
+
+# Set the content type
+headers = {'Content-Type': 'application/json'}
+
+# Make the request and display the response
+resp = requests.post(scoring_uri, input_data, headers=headers)
+print(resp.json())
+
+```
+![image](https://user-images.githubusercontent.com/32674614/159751081-5c319418-c3e7-4606-85e9-84142ddd8ef4.png)
 
 ## Screen Recording
 *TODO* Provide a link to a screen recording of the project in action. Remember that the screencast should demonstrate:
-- [End to End](https://youtu.be/SeVWd5EGX50)
-- [HyperParam End to End](https://youtu.be/Juap_0v5wU4)
-- [AutoML](https://youtu.be/wX6XIEO47HU)
-- [AutoML Model](https://youtu.be/ogPnH-2apuY)
-
+- [End to End](https://youtu.be/LaBNxiHDzg8)
 ## Standout Suggestions
 *TODO (Optional):* This is where you can provide information about any standout suggestions that you have attempted.
