@@ -762,9 +762,9 @@ Hyperdrive model provided an accuracy of 60.6%, at Regularization strength of 0.
 5. Hyperparameter Sampling: RandomParameterSampling with inverse regularization choice of (0.01,0.1,1) and Iteration of choice(20,40,70,100,150)
 
 #### How could you have improved it
-1.Prep data and address missing values, resampling training data, Adaptive Synthetic,Synthetic Minority Over-sampling Technique SMOTE
-2. Increase max_iter 
-3. Change inverse regularization and experiment with additional choices
+1.Prep data and address missing values, resampling training data, Adaptive Synthetic,Synthetic Minority Over-sampling Technique SMOTE  
+2. Increase max_iter   
+3. Change inverse regularization and experiment with additional choices  
  
 *TODO* Remeber to provide screenshots of the `RunDetails` widget as well as a screenshot of the best model trained with it's parameters.
 ### Fig14: New  Compute Cluster for  Hyperdrive experiment
