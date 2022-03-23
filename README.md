@@ -705,13 +705,22 @@ Bandit policy is based on slack factor/slack amount and evaluation interval. Ban
 evaluation_interval: the frequency of applying the policy. Each time the training script logs the primary metric counts as one interval. An evaluation_interval of 1 will apply the policy every time the training script reports the primary metric. An evaluation_interval of 2 will apply the policy every other time. If not specified, evaluation_interval is set to 1 by default.
 
 ```
+#BanditPolicy(evaluation_interval=1, slack_factor=None, slack_amount=None, delay_evaluation=0)
 early_termination_policy = BanditPolicy(evaluation_interval=1, slack_factor=0.1)
+
+#TODO: Create the different params that you will be using during training
+#solver{‘newton-cg’, ‘lbfgs’, ‘liblinear’, ‘sag’, ‘saga’}, default=’lbfgs’
 ps = RandomParameterSampling(
     {
 "--C" : choice(0.01,0.1,1) ,     
 "--max_iter" : choice(20,40,70,100,150),
+#"--solver" :  choice('newton-cg','lbfgs','liblinear','sag', 'saga')        
 }
 )  
+
+
+#TODO: Create your estimator and hyperdrive config
+
 
 if "training" not in os.listdir():
     os.mkdir("./training")
@@ -728,13 +737,14 @@ hyperdrive_run_config =  HyperDriveConfig(
         hyperparameter_sampling=ps,
         primary_metric_name='Accuracy',
         primary_metric_goal=PrimaryMetricGoal.MAXIMIZE,
-        max_total_runs = 10, 
+        max_total_runs = 20, 
         max_concurrent_runs =4,
         policy=early_termination_policy,
         estimator=skl_estimator
 )
+
 ```
-In the HyperParameter experiment hyperparameter_sampling uses BanditPolicy for early termination, with accuracy as the primary metric,Due to limited available time I have restricted the maximum total run to 10 with at the max of 4 concurrent run which has caused low accuracy of 60.6% almost 20% less than the AutoML model.
+In the HyperParameter experiment hyperparameter_sampling uses BanditPolicy for early termination, with accuracy as the primary metric,Due to limited available time I have restricted the maximum total run to 20 with at the max of 4 concurrent run which has caused low accuracy of 60.6% almost 20% less than the AutoML model.
 
 
 ### Results
