@@ -303,10 +303,6 @@ ITER   PIPELINE                                       DURATION            METRIC
  'submittedBy': 'ODL_User 189674'}
 
 ```
-#### Fig-2: Model output
-![image](https://user-images.githubusercontent.com/32674614/159717922-bd4ed23b-e81c-4c67-90ee-59fabc1149d5.png)
-![image](https://user-images.githubusercontent.com/32674614/159718091-4bf195f3-cb36-4173-81d1-7b1168f7abc8.png)
-![image](https://user-images.githubusercontent.com/32674614/159718617-abdd92cc-d599-43ef-b617-edf6c45021b7.png)
 
 
 Following are the results:
@@ -608,7 +604,7 @@ automl_config = AutoMLConfig(compute_target=compute_target,
 
 #### How could you have improved it
 1. Prep data and address missing values, resampling training data, Adaptive Synthetic,Synthetic Minority Over-sampling Technique SMOTE 
-##### Fig-3: Missing Data
+##### Fig-2: Missing Data
 ![image](https://user-images.githubusercontent.com/32674614/159722672-d94f7325-385b-4160-8527-940976a4b1a4.png)
 3. Change cross validation to reduce overfitting
 4. Increase experiment time out so that the run can go over more types of model and look for better reults
