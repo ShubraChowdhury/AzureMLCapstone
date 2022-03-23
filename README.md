@@ -96,8 +96,7 @@ description_text = "UCI machine Learning Maternal Health Risk Data Set"
 if key in ws.datasets.keys(): 
         found = True
         dataset = ws.datasets[key] 
-#https://archive.ics.uci.edu/ml/machine-learning-databases/00639/Maternal%20Health%20Risk%20Data%20Set.csv
-#https://github.com/ShubraChowdhury/AzureMLCapstone/blob/master/starter_file/Maternal_Health_Risk_Data_Set.csv
+
 
 if not found:
         # Create AML Dataset and register it into Workspace
@@ -108,32 +107,11 @@ if not found:
                                    name=key,
                                    description=description_text)
 ```
-### Fig-4 Compute Cluster Created
-![image](https://user-images.githubusercontent.com/32674614/159396842-f701cc3e-a105-4a1b-8502-d6dcb4b7ada0.png)
+
 
 
 Data is access from [Maternal Health Risk data from UCI's ML Dataset Repository](https://archive.ics.uci.edu/ml/machine-learning-databases/00639/Maternal%20Health%20Risk%20Data%20Set.csv). Both jupyter notebook access the data in similar way. First it looks for available dataset that is registered with the name "Maternal_Health_Risk_Data_Set", if the data is not found and not registered it uses Dataset from azureml.core.dataset package to fetch the dataset and then register the same in workspace
 
-Below is the code snippet to extract and register data 
-```
-found = False
-key="Maternal_Health_Risk_Data_Set" 
-description_text = "UCI machine Learning Maternal Health Risk Data Set"
-
-if key in ws.datasets.keys(): 
-        found = True
-        dataset = ws.datasets[key] 
-
-if not found:
-        # Create AML Dataset and register it into Workspace
-        example_data = 'https://archive.ics.uci.edu/ml/machine-learning-databases/00639/Maternal%20Health%20Risk%20Data%20Set.csv'
-        dataset = Dataset.Tabular.from_delimited_files(example_data)        
-        #Register Dataset in Workspace
-        dataset = dataset.register(workspace=ws,
-                                   name=key,
-                                   description=description_text)
-
-```
 
 
 ## Automated ML
