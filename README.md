@@ -679,13 +679,15 @@ I have restricted the experiment time out to 45 minutes  in an ideal scenerio I 
 ###### Fig-12: Data Transformation Preview
 ![image](https://user-images.githubusercontent.com/32674614/159734054-35dda918-910e-41f0-975c-97f7eee4b4e1.png)
 
-###### Fig13: Endpoint View
+###### Fig-13: Registering and Deploying Model
+![image](https://user-images.githubusercontent.com/32674614/159735961-9d567da0-6bb4-4b4e-a3c9-042f13dbbaca.png)
+
+###### Fig-14: Endpoint View `VotingEnsemble` Deployed 
 ![image](https://user-images.githubusercontent.com/32674614/159735321-bbcb0549-6a5c-4790-b4c3-9a4dad2820b8.png)
 ![image](https://user-images.githubusercontent.com/32674614/159735379-594d3ba4-d99e-4a29-bdc7-de8b798676f0.png)
 
-
-### Fig13: `VotingEnsemble` Deployed 
-![image](https://user-images.githubusercontent.com/32674614/159401734-346820f1-fced-4cc5-b85b-ed1491cb1728.png)
+###### Fig-15 Sending request to URI and geting response back
+![image](https://user-images.githubusercontent.com/32674614/159736267-d5c4bcf2-1154-4a9f-8336-9d5d8af3cf36.png)
 
 ## Hyperparameter Tuning
 *TODO*: What kind of model did you choose for this experiment and why? Give an overview of the types of parameters and their ranges used for the hyperparameter search
