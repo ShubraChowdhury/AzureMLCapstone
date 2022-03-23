@@ -754,6 +754,57 @@ In the HyperParameter experiment hyperparameter_sampling uses BanditPolicy for e
 
 Hyperdrive model provided an accuracy of 60.6%, at Regularization strength of 0.1 and at Max Iteration of 150.,Due to limited available time I have restricted the maximum total run to 10 with at the max of 4 concurrent run which has caused low accuracy of 60.6% almost 20% less than the AutoML model. Increasing the maximum run and large data volume could provide better results.
 
+```
+RunId: HD_dacbae8c-454e-455d-a050-0ce6edfd9cd3
+Web View: https://ml.azure.com/runs/HD_dacbae8c-454e-455d-a050-0ce6edfd9cd3?wsid=/subscriptions/6971f5ac-8af1-446e-8034-05acea24681f/resourcegroups/aml-quickstarts-189674/workspaces/quick-starts-ws-189674&tid=660b3398-b80e-49d2-bc5b-ac1dc93b5254
+
+Streaming azureml-logs/hyperdrive.txt
+=====================================
+
+"<START>[2022-03-22T19:57:36.374386][API][INFO]Experiment created<END>\n""<START>[2022-03-22T19:57:37.140097][GENERATOR][INFO]Trying to sample '4' jobs from the hyperparameter space<END>\n""<START>[2022-03-22T19:57:37.767002][GENERATOR][INFO]Successfully sampled '4' jobs, they will soon be submitted to the execution target.<END>\n""<START>[2022-03-22T19:58:07.511725][GENERATOR][INFO]Trying to sample '4' jobs from the hyperparameter space<END>\n""<START>[2022-03-22T19:58:07.772982][GENERATOR][INFO]Successfully sampled '4' jobs, they will soon be submitted to the execution target.<END>\n"<START>[2022-03-22T19:58:36.8026834Z][SCHEDULER][INFO]Scheduling job, id='HD_dacbae8c-454e-455d-a050-0ce6edfd9cd3_0'<END><START>[2022-03-22T19:58:36.8038611Z][SCHEDULER][INFO]Scheduling job, id='HD_dacbae8c-454e-455d-a050-0ce6edfd9cd3_1'<END><START>[2022-03-22T19:58:36.8045932Z][SCHEDULER][INFO]Scheduling job, id='HD_dacbae8c-454e-455d-a050-0ce6edfd9cd3_2'<END><START>[2022-03-22T19:58:36.8055841Z][SCHEDULER][INFO]Scheduling job, id='HD_dacbae8c-454e-455d-a050-0ce6edfd9cd3_3'<END><START>[2022-03-22T19:58:37.4565293Z][SCHEDULER][INFO]Successfully scheduled a job. Id='HD_dacbae8c-454e-455d-a050-0ce6edfd9cd3_0'<END><START>[2022-03-22T19:58:37.4907400Z][SCHEDULER][INFO]Successfully scheduled a job. Id='HD_dacbae8c-454e-455d-a050-0ce6edfd9cd3_2'<END><START>[2022-03-22T19:58:37.5121255Z][SCHEDULER][INFO]Successfully scheduled a job. Id='HD_dacbae8c-454e-455d-a050-0ce6edfd9cd3_1'<END><START>[2022-03-22T19:58:37.6629478Z][SCHEDULER][INFO]Successfully scheduled a job. Id='HD_dacbae8c-454e-455d-a050-0ce6edfd9cd3_3'<END>
+
+Execution Summary
+=================
+RunId: HD_dacbae8c-454e-455d-a050-0ce6edfd9cd3
+Web View: https://ml.azure.com/runs/HD_dacbae8c-454e-455d-a050-0ce6edfd9cd3?wsid=/subscriptions/6971f5ac-8af1-446e-8034-05acea24681f/resourcegroups/aml-quickstarts-189674/workspaces/quick-starts-ws-189674&tid=660b3398-b80e-49d2-bc5b-ac1dc93b5254
+
+{'runId': 'HD_dacbae8c-454e-455d-a050-0ce6edfd9cd3',
+ 'target': 'hyperdrive-com-clst',
+ 'status': 'Completed',
+ 'startTimeUtc': '2022-03-22T19:57:36.168031Z',
+ 'endTimeUtc': '2022-03-22T20:16:39.817352Z',
+ 'services': {},
+ 'properties': {'primary_metric_config': '{"name": "Accuracy", "goal": "maximize"}',
+  'resume_from': 'null',
+  'runTemplate': 'HyperDrive',
+  'azureml.runsource': 'hyperdrive',
+  'platform': 'AML',
+  'ContentSnapshotId': '821b1c93-7cb3-45b2-8045-ac578854df06',
+  'user_agent': 'python/3.6.9 (Linux-5.4.0-1068-azure-x86_64-with-debian-buster-sid) msrest/0.6.21 Hyperdrive.Service/1.0.0 Hyperdrive.SDK/core.1.38.0',
+  'space_size': '15',
+  'score': '0.6059113300492611',
+  'best_child_run_id': 'HD_dacbae8c-454e-455d-a050-0ce6edfd9cd3_0',
+  'best_metric_status': 'Succeeded'},
+ 'inputDatasets': [],
+ 'outputDatasets': [],
+ 'logFiles': {'azureml-logs/hyperdrive.txt': 'https://mlstrg189674.blob.core.windows.net/azureml/ExperimentRun/dcid.HD_dacbae8c-454e-455d-a050-0ce6edfd9cd3/azureml-logs/hyperdrive.txt?sv=2019-07-07&sr=b&sig=jLDsif5nECO7DiQVpP2C13u3cMmv6C8tr1EzxCdcCCQ%3D&skoid=d11b625e-d983-4038-9d1d-2dd597f76114&sktid=660b3398-b80e-49d2-bc5b-ac1dc93b5254&skt=2022-03-22T17%3A34%3A05Z&ske=2022-03-24T01%3A44%3A05Z&sks=b&skv=2019-07-07&st=2022-03-22T20%3A06%3A58Z&se=2022-03-23T04%3A16%3A58Z&sp=r'},
+ 'submittedBy': 'ODL_User 189674'}
+```
+###### Best run metrics
+```
+Best Run ID : HD_dacbae8c-454e-455d-a050-0ce6edfd9cd3_0
+
+ Accuracy : 0.6059113300492611
+
+ best run file names : ['azureml-logs/20_image_build_log.txt', 'logs/azureml/dataprep/backgroundProcess.log', 'logs/azureml/dataprep/backgroundProcess_Telemetry.log', 'logs/azureml/dataprep/rslex.log', 'outputs/model.joblib', 'outputs/model.pkl', 'system_logs/cs_capability/cs-capability.log', 'system_logs/hosttools_capability/hosttools-capability.log', 'system_logs/lifecycler/execution-wrapper.log', 'system_logs/lifecycler/lifecycler.log', 'system_logs/lifecycler/vm-bootstrapper.log', 'user_logs/std_log.txt']
+
+ best run details  {'runId': 'HD_dacbae8c-454e-455d-a050-0ce6edfd9cd3_0', 'target': 'hyperdrive-com-clst', 'status': 'Completed', 'startTimeUtc': '2022-03-22T20:08:48.305101Z', 'endTimeUtc': '2022-03-22T20:10:00.060895Z', 'services': {}, 'properties': {'_azureml.ComputeTargetType': 'amlcompute', 'ContentSnapshotId': '821b1c93-7cb3-45b2-8045-ac578854df06', 'ProcessInfoFile': 'azureml-logs/process_info.json', 'ProcessStatusFile': 'azureml-logs/process_status.json'}, 'inputDatasets': [], 'outputDatasets': [], 'runDefinition': {'script': 'train.py', 'command': '', 'useAbsolutePath': False, 'arguments': ['--C', '0.1', '--max_iter', '150'], 'sourceDirectoryDataStore': None, 'framework': 'Python', 'communicator': 'None', 'target': 'hyperdrive-com-clst', 'dataReferences': {}, 'data': {}, 'outputData': {}, 'datacaches': [], 'jobName': None, 'maxRunDurationSeconds': None, 'nodeCount': 1, 'instanceTypes': [], 'priority': None, 'credentialPassthrough': False, 'identity': None, 'environment': {'name': 'Experiment capstone_hyperdrive_exp Environment', 'version': 'Autosave_2022-03-22T19:58:37Z_b98ef0c5', 'python': {'interpreterPath': 'python', 'userManagedDependencies': False, 'condaDependencies': {'channels': ['anaconda', 'conda-forge'], 'dependencies': ['python=3.6.2', {'pip': ['azureml-defaults', 'scikit-learn==0.20.3', 'scipy==1.2.1', 'joblib==0.13.2']}], 'name': 'azureml_ba9520bf386d662001eeb9523395794e'}, 'baseCondaEnvironment': None}, 'environmentVariables': {'EXAMPLE_ENV_VAR': 'EXAMPLE_VALUE'}, 'docker': {'baseImage': 'mcr.microsoft.com/azureml/intelmpi2018.3-ubuntu16.04:20200423.v1', 'platform': {'os': 'Linux', 'architecture': 'amd64'}, 'baseDockerfile': None, 'baseImageRegistry': {'address': None, 'username': None, 'password': None}, 'enabled': False, 'arguments': []}, 'spark': {'repositories': [], 'packages': [], 'precachePackages': False}, 'inferencingStackVersion': None}, 'history': {'outputCollection': True, 'directoriesToWatch': ['logs'], 'enableMLflowTracking': True, 'snapshotProject': True}, 'spark': {'configuration': {'spark.app.name': 'Azure ML Experiment', 'spark.yarn.maxAppAttempts': '1'}}, 'parallelTask': {'maxRetriesPerWorker': 0, 'workerCountPerNode': 1, 'terminalExitCodes': None, 'configuration': {}}, 'amlCompute': {'name': None, 'vmSize': None, 'retainCluster': False, 'clusterMaxNodeCount': 1}, 'aiSuperComputer': {'instanceType': 'D2', 'imageVersion': 'pytorch-1.7.0', 'location': None, 'aiSuperComputerStorageData': None, 'interactive': False, 'scalePolicy': None, 'virtualClusterArmId': None, 'tensorboardLogDirectory': None, 'sshPublicKey': None, 'sshPublicKeys': None, 'enableAzmlInt': True, 'priority': 'Medium', 'slaTier': 'Standard', 'userAlias': None}, 'kubernetesCompute': {'instanceType': None}, 'tensorflow': {'workerCount': 1, 'parameterServerCount': 1}, 'mpi': {'processCountPerNode': 1}, 'pyTorch': {'communicationBackend': 'nccl', 'processCount': None}, 'hdi': {'yarnDeployMode': 'Cluster'}, 'containerInstance': {'region': None, 'cpuCores': 2.0, 'memoryGb': 3.5}, 'exposedPorts': None, 'docker': {'useDocker': True, 'sharedVolumes': True, 'shmSize': '2g', 'arguments': []}, 'cmk8sCompute': {'configuration': {}}, 'commandReturnCodeConfig': {'returnCode': 'Zero', 'successfulReturnCodes': []}, 'environmentVariables': {}, 'applicationEndpoints': {}, 'parameters': []}, 'logFiles': {'azureml-logs/20_image_build_log.txt': 'https://mlstrg189674.blob.core.windows.net/azureml/ExperimentRun/dcid.HD_dacbae8c-454e-455d-a050-0ce6edfd9cd3_0/azureml-logs/20_image_build_log.txt?sv=2019-07-07&sr=b&sig=C%2BLXeppJ5doaiEIJJp1VQnhmiW0hP4Sz%2FUcLJ5Xj%2FT8%3D&skoid=d11b625e-d983-4038-9d1d-2dd597f76114&sktid=660b3398-b80e-49d2-bc5b-ac1dc93b5254&skt=2022-03-22T17%3A34%3A05Z&ske=2022-03-24T01%3A44%3A05Z&sks=b&skv=2019-07-07&st=2022-03-22T20%3A08%3A44Z&se=2022-03-23T04%3A18%3A44Z&sp=r', 'logs/azureml/dataprep/backgroundProcess.log': 'https://mlstrg189674.blob.core.windows.net/azureml/ExperimentRun/dcid.HD_dacbae8c-454e-455d-a050-0ce6edfd9cd3_0/logs/azureml/dataprep/backgroundProcess.log?sv=2019-07-07&sr=b&sig=GVqwXE0x85352DraG8AKOniurZnItbQpBPr5AeOx1k0%3D&skoid=d11b625e-d983-4038-9d1d-2dd597f76114&sktid=660b3398-b80e-49d2-bc5b-ac1dc93b5254&skt=2022-03-22T17%3A34%3A05Z&ske=2022-03-24T01%3A44%3A05Z&sks=b&skv=2019-07-07&st=2022-03-22T20%3A08%3A44Z&se=2022-03-23T04%3A18%3A44Z&sp=r', 'logs/azureml/dataprep/backgroundProcess_Telemetry.log': 'https://mlstrg189674.blob.core.windows.net/azureml/ExperimentRun/dcid.HD_dacbae8c-454e-455d-a050-0ce6edfd9cd3_0/logs/azureml/dataprep/backgroundProcess_Telemetry.log?sv=2019-07-07&sr=b&sig=ZjUfDb2vJB%2FXTXlvNEwlT871k6WST1d2FmFwH00UdKw%3D&skoid=d11b625e-d983-4038-9d1d-2dd597f76114&sktid=660b3398-b80e-49d2-bc5b-ac1dc93b5254&skt=2022-03-22T17%3A34%3A05Z&ske=2022-03-24T01%3A44%3A05Z&sks=b&skv=2019-07-07&st=2022-03-22T20%3A08%3A44Z&se=2022-03-23T04%3A18%3A44Z&sp=r', 'logs/azureml/dataprep/rslex.log': 'https://mlstrg189674.blob.core.windows.net/azureml/ExperimentRun/dcid.HD_dacbae8c-454e-455d-a050-0ce6edfd9cd3_0/logs/azureml/dataprep/rslex.log?sv=2019-07-07&sr=b&sig=Remu46A1reDNwm9HxyoX7qs2xERMky6tPw9doet7Y2Y%3D&skoid=d11b625e-d983-4038-9d1d-2dd597f76114&sktid=660b3398-b80e-49d2-bc5b-ac1dc93b5254&skt=2022-03-22T17%3A34%3A05Z&ske=2022-03-24T01%3A44%3A05Z&sks=b&skv=2019-07-07&st=2022-03-22T20%3A08%3A44Z&se=2022-03-23T04%3A18%3A44Z&sp=r'}, 'submittedBy': 'ODL_User 189674'}
+
+ best run metrics : {'Regularization Strength:': 0.1, 'Max iterations:': 150, 'Accuracy': 0.6059113300492611}
+
+```
+
+
 #### Model Parameters
 1. Primary Metric :'Accuracy'
 2. Maximum total runs : 20
