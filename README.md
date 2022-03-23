@@ -16,7 +16,34 @@ As a next step I have worked on model using HyperDrive, in this case the entry s
 
 In my experiments the AutoML model produces the best results which has 21.2% higher accuracy than the Hyperdrive model. Based on the results I have deployed the best model that is the AutoML model. Deployment involves Registering the model,Prepare an entry script (scoreautoml.py) , Prepare an inference configuration (this sources in the environment defined in "project_environment.yml"),Deploy the model .
 
-Once the AutoML model is deployed I have validated existence of  scoring_uri and swagger_uri . Once this was validated I had send a request to the web service that was deployed to tested the result. The request sent contains the following data "Age": 25,"SystolicBP":130 ,"DiastolicBP":80 ,"BS": 15,"BodyTemp": 98,"HeartRate": 86 which produced a RiskLevel of 'high risk' and this shows that the model was deployed and webservices are responding f.
+Once the AutoML model is deployed I have validated existence of  scoring_uri and swagger_uri . Once this was validated I had send a request to the web service that was deployed to tested the result. The request sent contains the following data "Age": 25,"SystolicBP":130 ,"DiastolicBP":80 ,"BS": 15,"BodyTemp": 98,"HeartRate": 86 which produced a RiskLevel of 'high risk' and this shows that the model was deployed and webservices are responding.
+
+#### High level sequence of task involved.
+##### AutoML involves the following task:
+1. Import all necessary packages
+2. Create a Workspace and experiment
+3. Create a compute instance
+4. Import and register the Maternal Health Risk dataset
+5. Split the dataset in train and test
+6. Define automl_settings  and AutoMLConfig settings , I am using classification as task and accuracy as the primary metrics
+7. Submit the AutoMl experiment
+8. Get run details , run status and best metrics
+##### Hyperdrive involves the following task:
+1. Import all necessary packages
+2. Create a Workspace and experiment
+3. Create a compute instance
+4. Import and register the Maternal Health Risk dataset
+5. Create entry script train.py which uses logistic regression , train and test split are included in this script, this script also cleanse data
+6. Define HyperDriveConfig with accuracy as the primary metrics
+7. Submit the experiment
+8. Get run details , run status and best metrics
+##### Following task will be after determining the best metrics
+1. Register the model
+2. Define InferenceConfig including entry script and sourcing environment
+3. Define AciWebservice configurations
+4. Deploy model  
+5. Vaildate URI for score and swagger
+6. Send a request and get the output 
 
 ## Project Set Up and Installation
 This project uses Azure ML environment provided by Udacity. Some of the components are Compute Instance(which gets created by the scripts deployed by Udacity team), compute cluster (which is created as a part of the project), notebook, Experiments, AtuoML, Endpoints, Datastore, Environment etc.
@@ -44,32 +71,7 @@ The above information is used by the models to predict "Risk Level"
 
 ### Task
 My task involves predicting Maternal "Risk Level" based on Age, SystolicBP, DiastolicBP,BS,BodyTemp,HeartRate. 
-In order to achieve the task I have to find the best model between AutoML and Hyperdrive models.
-#### AutoML involves the following task:
-1. Import all necessary packages
-2. Create a Workspace and experiment
-3. Create a compute instance
-4. Import and register the Maternal Health Risk dataset
-5. Split the dataset in train and test
-6. Define automl_settings  and AutoMLConfig settings , I am using classification as task and accuracy as the primary metrics
-7. Submit the AutoMl experiment
-8. Get run details , run status and best metrics
-#### Hyperdrive involves the following task:
-1. Import all necessary packages
-2. Create a Workspace and experiment
-3. Create a compute instance
-4. Import and register the Maternal Health Risk dataset
-5. Create entry script train.py which uses logistic regression , train and test split are included in this script, this script also cleanse data
-6. Define HyperDriveConfig with accuracy as the primary metrics
-7. Submit the experiment
-8. Get run details , run status and best metrics
-#### Following task will be after determining the best metrics
-1. Register the model
-2. Define InferenceConfig including entry script and sourcing environment
-3. Define AciWebservice configurations
-4. Deploy model  
-5. Vaildate URI for score and swagger
-6. Send a request and get the output 
+
 
 
 ### Access
