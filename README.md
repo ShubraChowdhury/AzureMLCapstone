@@ -169,7 +169,54 @@ automl_config = AutoMLConfig(compute_target=compute_target,
 *TODO*: What are the results you got with your automated ML model? What were the parameters of the model? How could you have improved it?
 
 AutoML experiment in 45 minutes has trained data on a total of 38 models , out of which the `VotingEnsemble` model is the best model with 81.75% accuracy.
+```
+Experiment	Id	Type	Status	Details Page	Docs Page
+capstone-automl-experiment	AutoML_093d98bd-0ffe-4170-a2f6-2f6941181eab	automl	Running	Link to Azure Machine Learning studio	Link to Documentation
 
+Current status: FeaturesGeneration. Generating features for the dataset.
+Current status: DatasetFeaturization. Beginning to fit featurizers and featurize the dataset.
+Current status: DatasetCrossValidationSplit. Generating individually featurized CV splits.
+Current status: ModelSelection. Beginning model selection.
+
+********************************************************************************************
+DATA GUARDRAILS: 
+
+TYPE:         Class balancing detection
+STATUS:       PASSED
+DESCRIPTION:  Your inputs were analyzed, and all classes are balanced in your training data.
+              Learn more about imbalanced data: https://aka.ms/AutomatedMLImbalancedData
+
+********************************************************************************************
+
+TYPE:         Missing feature values imputation
+STATUS:       DONE
+DESCRIPTION:  If the missing values are expected, let the run complete. Otherwise cancel the current run and use a script to customize the handling of missing feature values that may be more appropriate based on the data type and business requirement.
+              Learn more about missing value imputation: https://aka.ms/AutomatedMLFeaturization
+DETAILS:      
++------------------------------+------------------------------+------------------------------+
+|Column name                   |Missing value count           |Imputation type               |
++==============================+==============================+==============================+
+|BodyTemp                      |3                             |mean                          |
++------------------------------+------------------------------+------------------------------+
+
+********************************************************************************************
+
+TYPE:         High cardinality feature detection
+STATUS:       PASSED
+DESCRIPTION:  Your inputs were analyzed, and no high cardinality features were detected.
+              Learn more about high cardinality feature handling: https://aka.ms/AutomatedMLFeaturization
+
+********************************************************************************************
+
+********************************************************************************************
+ITER: The iteration being evaluated.
+PIPELINE: A summary description of the pipeline being evaluated.
+DURATION: Time taken for the current iteration.
+METRIC: The result of computing score on the fitted pipeline.
+BEST: The best observed score thus far.
+********************************************************************************************
+```
+#### Fig-2: Model output
 ![image](https://user-images.githubusercontent.com/32674614/159717922-bd4ed23b-e81c-4c67-90ee-59fabc1149d5.png)
 ![image](https://user-images.githubusercontent.com/32674614/159718091-4bf195f3-cb36-4173-81d1-7b1168f7abc8.png)
 ![image](https://user-images.githubusercontent.com/32674614/159718617-abdd92cc-d599-43ef-b617-edf6c45021b7.png)
@@ -473,9 +520,11 @@ automl_config = AutoMLConfig(compute_target=compute_target,
 ```
 
 #### How could you have improved it
-1. Prep data more by resampling training data, Adaptive Synthetic,Synthetic Minority Over-sampling Technique SMOTE 
-2. Change cross validation to reduce overfitting
-3. Increase experiment time out so that the run can go over more types of model and look for better reults
+1. Prep data and address missing values, resampling training data, Adaptive Synthetic,Synthetic Minority Over-sampling Technique SMOTE 
+##### Fig-3: Missing Data
+![image](https://user-images.githubusercontent.com/32674614/159722672-d94f7325-385b-4160-8527-940976a4b1a4.png)
+3. Change cross validation to reduce overfitting
+4. Increase experiment time out so that the run can go over more types of model and look for better reults
 
 [AutoMLConfig](https://docs.microsoft.com/en-us/python/api/azureml-train-automl-client/azureml.train.automl.automlconfig.automlconfig?view=azure-ml-py)
 The cross validation checks overfitting and for computational reasons pre-defined timeout was set to 45 Minutes  which limits number of Models that could be built.
