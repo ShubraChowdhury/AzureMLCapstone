@@ -306,6 +306,22 @@ ITER   PIPELINE                                       DURATION            METRIC
 
 
 Following are the results:
+```
+===== AutoMl Best Run ========
+Run(Experiment: capstone-automl-experiment,
+Id: AutoML_093d98bd-0ffe-4170-a2f6-2f6941181eab_38,
+Type: azureml.scriptrun,
+Status: Completed)
+
+  ===== AutoMl Best Fitted Model ========
+Pipeline(memory=None,
+         steps=[('datatransformer',
+                 DataTransformer(enable_dnn=False, enable_feature_sweeping=False, feature_sweeping_config={}, feature_sweeping_timeout=86400, featurization_config=None, force_text_dnn=False, is_cross_validation=True, is_onnx_compatible=True, observer=None, task='classification', working_dir='/mnt/batch/tasks/shared/LS_root/mount...
+    gpu_training_param_dict={'processing_unit_type': 'cpu'}
+), random_state=0, reg_alpha=0.3125, reg_lambda=0.4166666666666667, subsample=0.5, tree_method='auto'))], verbose=False))], flatten_transform=None, weights=[0.14285714285714285, 0.14285714285714285, 0.14285714285714285, 0.07142857142857142, 0.07142857142857142, 0.07142857142857142, 0.07142857142857142, 0.14285714285714285, 0.14285714285714285]))],
+         verbose=False)
+Y_transformer(['LabelEncoder', LabelEncoder()])
+```
 - f1_score_weighted 0.816520723030668
 - f1_score_macro 0.8181120773643548
 - precision_score_weighted 0.8176578649383873
