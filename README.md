@@ -679,8 +679,11 @@ I have restricted the experiment time out to 45 minutes  in an ideal scenerio I 
 ###### Fig-12: Data Transformation Preview
 ![image](https://user-images.githubusercontent.com/32674614/159734054-35dda918-910e-41f0-975c-97f7eee4b4e1.png)
 
-### Fig12: Endpoint View
-![image](https://user-images.githubusercontent.com/32674614/159401495-80dc16e0-a74c-4122-bb00-1d866f979bde.png)
+###### Fig13: Endpoint View
+![image](https://user-images.githubusercontent.com/32674614/159735321-bbcb0549-6a5c-4790-b4c3-9a4dad2820b8.png)
+![image](https://user-images.githubusercontent.com/32674614/159735379-594d3ba4-d99e-4a29-bdc7-de8b798676f0.png)
+
+
 ### Fig13: `VotingEnsemble` Deployed 
 ![image](https://user-images.githubusercontent.com/32674614/159401734-346820f1-fced-4cc5-b85b-ed1491cb1728.png)
 
