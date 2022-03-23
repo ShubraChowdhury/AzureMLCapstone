@@ -170,8 +170,8 @@ automl_config = AutoMLConfig(compute_target=compute_target,
 
 AutoML experiment in 45 minutes has trained data on a total of 38 models , out of which the `VotingEnsemble` model is the best model with 81.75% accuracy.
 
-ITER   PIPELINE                                       DURATION            METRIC      BEST
-    0   MaxAbsScaler LightGBM                          0:00:10             0.7904    0.7904
+| ITER | PIPELINE                                  |   DURATION   |        METRIC  |   BEST |
+|   0  | MaxAbsScaler LightGBM                     |    0:00:10   |        0.7904  | 0.7904 |  
     1   MaxAbsScaler XGBoostClassifier                 0:00:09             0.7485    0.7904
     2   MaxAbsScaler ExtremeRandomTrees                0:00:10             0.6622    0.7904
     3   SparseNormalizer XGBoostClassifier             0:00:09             0.7411    0.7904
