@@ -770,6 +770,7 @@ Hyperdrive model provided an accuracy of 60.6%, at Regularization strength of 0.
 ###### Fig-15 : New  Compute Cluster for  Hyperdrive experiment
 ![image](https://user-images.githubusercontent.com/32674614/159743420-e9f4a752-626a-46ea-9297-00ca3c00212b.png)
 ###### Fig-16 : Hyperdrive experiment submitted and running
+![image](https://user-images.githubusercontent.com/32674614/159747000-123fc773-83fe-4021-8eec-6af2325d917a.png)
 ![image](https://user-images.githubusercontent.com/32674614/159743760-ce2566bb-3912-451a-acd5-4bc00b3cdd3c.png)
 ###### Fig-17 : Hyperdrive experiment created in Azure ML studio navigator
 ![image](https://user-images.githubusercontent.com/32674614/159743944-5077d9f8-2060-4761-b861-5bfc7f9b72aa.png)
@@ -779,30 +780,27 @@ Hyperdrive model provided an accuracy of 60.6%, at Regularization strength of 0.
 ![image](https://user-images.githubusercontent.com/32674614/159744253-1a79e6d4-5cfd-4cef-9b35-f580f74e0f16.png)
 ###### Fig-20 : Hyperdrive experiment child run
 ![image](https://user-images.githubusercontent.com/32674614/159744312-a1c6660d-1a71-415b-9f3c-943738a78f37.png)
+###### Fig-21 : Hyperdrive experiment in queued status
+![image](https://user-images.githubusercontent.com/32674614/159746180-db701880-3926-4e90-b1f0-c40c94e73194.png)
+###### Fig-22 : Hyperdrive experiment in preparing status
+![image](https://user-images.githubusercontent.com/32674614/159746363-f3e8d687-7566-415e-b500-66420743cc11.png)
+###### Fig-23 : Hyperdrive experiment in running status
+![image](https://user-images.githubusercontent.com/32674614/159746503-932789e2-31f9-4fee-9cf0-d9bd31a4a2ef.png)
+###### Fig-24 : Hyperdrive experiment in completed  status
+![image](https://user-images.githubusercontent.com/32674614/159746556-debe698e-e9ac-4eec-a353-0f9c2e1305be.png)
+![image](https://user-images.githubusercontent.com/32674614/159746925-45b5ac9d-b644-4ad4-b769-321a2d74f03e.png)
+![image](https://user-images.githubusercontent.com/32674614/159747068-fbf4cf53-a47e-4385-966b-35238b9908ae.png)
+![image](https://user-images.githubusercontent.com/32674614/159747225-6b153baf-90b2-4470-944e-f1b31b607a87.png)
 
-=====
-### Fig15: Experiment Running
-![image](https://user-images.githubusercontent.com/32674614/159407652-ab6beb91-aea7-42a7-a792-5d0b92050a59.png)
-### Fig16: Experiment a run completed and a run in queue
-![image](https://user-images.githubusercontent.com/32674614/159407749-dfcad436-df78-44cc-b8a6-f40bde73792c.png)
-### Fig17: Experiment in progress
-![image](https://user-images.githubusercontent.com/32674614/159407834-bb526404-bae9-4532-9100-7d766a4b1781.png)
-### Fig18: Experiment Completed
-![image](https://user-images.githubusercontent.com/32674614/159407884-d04ef9e5-0759-457a-a648-7762845d33c0.png)
-### Fig19: Experiment Result
-![image](https://user-images.githubusercontent.com/32674614/159407971-37977598-f68c-419e-947d-89976304c3be.png)
-### Fig20: Experiment Completed
-![image](https://user-images.githubusercontent.com/32674614/159408038-45daa47b-1a15-4553-bf74-e9e7d54c5bc5.png)
-### Fig21: Experiment Result
-![image](https://user-images.githubusercontent.com/32674614/159408157-4a92838b-8c04-402f-909b-ba381accc929.png)
-### Fig22: Experiment Childrun Accuracy
-![image](https://user-images.githubusercontent.com/32674614/159408213-0a5b38e6-9319-4225-ac32-1eb0abbcf05c.png)
-### Fig23: Endpoint
-![image](https://user-images.githubusercontent.com/32674614/159408326-90c0e811-b46b-493f-bcd2-fdba2e17b86e.png)
-### Fig24.1: Endpoint
-![image](https://user-images.githubusercontent.com/32674614/159408383-048c2f29-2ef2-467c-a077-8bca4b0d7eef.png)
-### Fig24.2: Endpoint
-![image](https://user-images.githubusercontent.com/32674614/159408421-c46c174b-3813-4deb-b763-86193d4a90c5.png)
+
+###### Fig-25 : Hyperdrive experiment accuracy graph
+![image](https://user-images.githubusercontent.com/32674614/159746766-a434cd58-e526-40c4-a76b-aaa9a77f750c.png)
+###### Fig-26 : Hyperdrive experiment accuracy 3D scatter
+![image](https://user-images.githubusercontent.com/32674614/159746848-2b45a4e6-a7ca-46a0-93b1-2377db120010.png)
+###### Fig-27 : Hyperdrive experiment metrics
+![image](https://user-images.githubusercontent.com/32674614/159747312-5f9b6603-6cfb-4a61-a4ab-a0c8ccebd9bc.png)
+
+
 
 
 ## Model Deployment
