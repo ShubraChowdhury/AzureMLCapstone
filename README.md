@@ -686,7 +686,7 @@ I have restricted the experiment time out to 45 minutes  in an ideal scenerio I 
 ![image](https://user-images.githubusercontent.com/32674614/159735321-bbcb0549-6a5c-4790-b4c3-9a4dad2820b8.png)
 ![image](https://user-images.githubusercontent.com/32674614/159735379-594d3ba4-d99e-4a29-bdc7-de8b798676f0.png)
 
-###### Fig-15 Sending request to URI and geting response back
+###### Fig-15 Sending request with  sample input the data to URI and geting response back  sample response
 ![image](https://user-images.githubusercontent.com/32674614/159736267-d5c4bcf2-1154-4a9f-8336-9d5d8af3cf36.png)
 
 ## Hyperparameter Tuning
