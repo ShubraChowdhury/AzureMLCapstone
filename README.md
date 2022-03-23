@@ -168,7 +168,48 @@ automl_config = AutoMLConfig(compute_target=compute_target,
 ### Results
 *TODO*: What are the results you got with your automated ML model? What were the parameters of the model? How could you have improved it?
 
-AutoML experiment in 20 minutes has trained data on a total of 38 models , out of which the `VotingEnsemble` model is the best model with 82% accuracy.
+AutoML experiment in 45 minutes has trained data on a total of 38 models , out of which the `VotingEnsemble` model is the best model with 81.75% accuracy.
+
+ITER   PIPELINE                                       DURATION            METRIC      BEST
+    0   MaxAbsScaler LightGBM                          0:00:10             0.7904    0.7904
+    1   MaxAbsScaler XGBoostClassifier                 0:00:09             0.7485    0.7904
+    2   MaxAbsScaler ExtremeRandomTrees                0:00:10             0.6622    0.7904
+    3   SparseNormalizer XGBoostClassifier             0:00:09             0.7411    0.7904
+    4   MaxAbsScaler LightGBM                          0:00:09             0.7040    0.7904
+    5   MaxAbsScaler LightGBM                          0:00:09             0.7065    0.7904
+    6   StandardScalerWrapper XGBoostClassifier        0:00:09             0.7534    0.7904
+    7   MaxAbsScaler LogisticRegression                0:00:09             0.6326    0.7904
+    8   StandardScalerWrapper ExtremeRandomTrees       0:00:09             0.5585    0.7904
+   10   SparseNormalizer LightGBM                      0:00:09             0.6510    0.7904
+    9   StandardScalerWrapper XGBoostClassifier        0:00:08             0.7152    0.7904
+   11   StandardScalerWrapper XGBoostClassifier        0:00:09             0.7583    0.7904
+   12   MaxAbsScaler LogisticRegression                0:00:09             0.6276    0.7904
+   13   MaxAbsScaler SGD                               0:00:08             0.6277    0.7904
+   14   StandardScalerWrapper XGBoostClassifier        0:00:09             0.7152    0.7904
+   15   SparseNormalizer RandomForest                  0:00:10             0.7337    0.7904
+   20   TruncatedSVDWrapper RandomForest               0:00:04             0.7732    0.7904
+   16   StandardScalerWrapper LogisticRegression       0:00:09             0.6338    0.7904
+   17   StandardScalerWrapper RandomForest             0:00:09             0.7139    0.7904
+   21   StandardScalerWrapper XGBoostClassifier        0:03:37             0.7719    0.7904
+   18   StandardScalerWrapper XGBoostClassifier        0:00:09             0.7830    0.7904
+   19   TruncatedSVDWrapper RandomForest               0:00:10             0.6671    0.7904
+   22   SparseNormalizer XGBoostClassifier             0:00:04             0.7472    0.7904
+   23   StandardScalerWrapper LightGBM                 0:00:04             0.6436    0.7904
+   26   SparseNormalizer XGBoostClassifier             0:00:04             0.7300    0.7904
+   24   StandardScalerWrapper LogisticRegression       0:00:04             0.6202    0.7904
+   25   StandardScalerWrapper RandomForest             0:00:04             0.6522    0.7904
+   27   SparseNormalizer XGBoostClassifier             0:00:04             0.7509    0.7904
+   28   SparseNormalizer XGBoostClassifier             0:00:04             0.7398    0.7904
+   29   MaxAbsScaler ExtremeRandomTrees                0:00:04             0.6794    0.7904
+   30   TruncatedSVDWrapper LightGBM                   0:00:04             0.4685    0.7904
+   31   StandardScalerWrapper XGBoostClassifier        0:00:04             0.6892    0.7904
+   32   MaxAbsScaler RandomForest                      0:00:04             0.6436    0.7904
+   33   StandardScalerWrapper XGBoostClassifier        0:00:04             0.7053    0.7904
+   34                                                  0:00:00                nan    0.7904
+   35                                                  0:00:00                nan    0.7904
+   36                                                  0:00:00                nan    0.7904
+   37                                                  0:00:00                nan    0.7904
+   38    VotingEnsemble                                0:00:04             0.8175    0.8175
 Following are the results:
 - average_precision_score_micro 0.8730812741180376
 - AUC_macro 0.9226793705273387
