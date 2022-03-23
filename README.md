@@ -172,6 +172,7 @@ AutoML experiment in 45 minutes has trained data on a total of 38 models , out o
 
 ![image](https://user-images.githubusercontent.com/32674614/159717922-bd4ed23b-e81c-4c67-90ee-59fabc1149d5.png)
 ![image](https://user-images.githubusercontent.com/32674614/159718091-4bf195f3-cb36-4173-81d1-7b1168f7abc8.png)
+![image](https://user-images.githubusercontent.com/32674614/159718407-550cc81a-d693-41f9-8068-793a7e0cd660.png)
 
 
 Following are the results:
