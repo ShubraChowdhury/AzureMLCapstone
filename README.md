@@ -72,25 +72,41 @@ The above information is used by the models to predict "Risk Level"
 
 
 ### Task
+*TODO*: Explain the task you are going to be solving with this dataset and the features you will be using for it.
+
 My task involves predicting Maternal "Risk Level" based on Age, SystolicBP, DiastolicBP,BS,BodyTemp,HeartRate. 
 
+AutoML will use Classification task and train data on Age, SystolicBP, DiastolicBP,BS,BodyTemp,HeartRate to predict "Risk Level"
+Hyperdrive model will use LogisticRegression and train data on Age, SystolicBP, DiastolicBP,BS,BodyTemp,HeartRate to predict "Risk Level"
+
+In both models accuracy is the primary metrics
 
 
 ### Access
 *TODO*: Explain how you are accessing the data in your workspace.
-As a prerequisite I had created a Compute Cluster named "automl-com-clst" , specifcaly to be used by AutoML model. It used a VM "STANDARD_D2_V2" with a maximum node of 4
 
-Following is the code snippet used for creating compute cluster
+Data will be accessed using Jupyter Notebook. Notebook will fetch data from the URL [Maternal Health Risk data from UCI's ML Dataset Repository](https://archive.ics.uci.edu/ml/machine-learning-databases/00639/Maternal%20Health%20Risk%20Data%20Set.csv)
+
+Following is the code snippet used for accessing data and registering datase
 ```
-amlcompute_cluster_name = "automl-com-clst" 
-try:
-    compute_target = ComputeTarget(workspace=ws, name=amlcompute_cluster_name)
-    print('Found existing cluster, use it.')
-except ComputeTargetException:
-    compute_config = AmlCompute.provisioning_configuration(vm_size='STANDARD_D2_V2', max_nodes=4)
-    compute_target = ComputeTarget.create(ws, amlcompute_cluster_name, compute_config)
+found = False
+key="Maternal_Health_Risk_Data_Set" 
+description_text = "UCI machine Learning Maternal Health Risk Data Set"
 
-compute_target.wait_for_completion(show_output=True, min_node_count = 1, timeout_in_minutes = 10)
+if key in ws.datasets.keys(): 
+        found = True
+        dataset = ws.datasets[key] 
+#https://archive.ics.uci.edu/ml/machine-learning-databases/00639/Maternal%20Health%20Risk%20Data%20Set.csv
+#https://github.com/ShubraChowdhury/AzureMLCapstone/blob/master/starter_file/Maternal_Health_Risk_Data_Set.csv
+
+if not found:
+        # Create AML Dataset and register it into Workspace
+        example_data = 'https://archive.ics.uci.edu/ml/machine-learning-databases/00639/Maternal%20Health%20Risk%20Data%20Set.csv'
+        dataset = Dataset.Tabular.from_delimited_files(example_data)        
+        #Register Dataset in Workspace
+        dataset = dataset.register(workspace=ws,
+                                   name=key,
+                                   description=description_text)
 ```
 ### Fig-4 Compute Cluster Created
 ![image](https://user-images.githubusercontent.com/32674614/159396842-f701cc3e-a105-4a1b-8502-d6dcb4b7ada0.png)
