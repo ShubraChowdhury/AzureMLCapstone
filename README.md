@@ -118,7 +118,7 @@ Data is access from [Maternal Health Risk data from UCI's ML Dataset Repository]
 *TODO*: Give an overview of the `automl` settings and configuration you used for this experiment
 
 In this experiment I have used the following `automl` settings:
-- Experiment Timeout of  20 minutes
+- Experiment Timeout of  45 minutes
 - Maximum Concurrent Iterations of  5
 - Number of Cross Validations of 3
 - Primary metric is to find accuracy
@@ -137,7 +137,7 @@ In this experiment I have used the following `automl` configuration:
 Below is the code snippet for `automl` 
 ```
 automl_settings = {
-    "experiment_timeout_minutes": 20,
+    "experiment_timeout_minutes": 45,
     "max_concurrent_iterations": 5,
     "n_cross_validations":3,
     "primary_metric" : 'accuracy'
@@ -148,6 +148,7 @@ automl_config = AutoMLConfig(compute_target=compute_target,
                              task = "classification",
                              training_data=train_data,
                              label_column_name="RiskLevel",   
+                             #path = project_folder,
                              enable_early_stopping= True,
                              featurization= 'auto',
                              debug_log = "automl_errors.log",
