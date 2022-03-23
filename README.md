@@ -440,10 +440,47 @@ Fitted Model Steps
 ))]
 ```
 
-[AutoMLConfig](https://docs.microsoft.com/en-us/python/api/azureml-train-automl-client/azureml.train.automl.automlconfig.automlconfig?view=azure-ml-py)
-The cross validation checks overfitting and for computational reasons pre-defined timeout was set to 20 Minutes  which limits number of Models that could be built.Model has Accuracy as primary metric.
+#### Parameters of the model
+Following are the Model Parameters
+1. Experiment Timeout : 45 minutes
+2. Concurrent Iterations : 5
+3. Cross Validations :3
+4. Primary Metric : accuracy
+5. Task : Classification
+6. Label Column Name : RiskLevel
 
-I have restricted the experiment time out to 20 minutes as this was my sixth try and I was loosing the opportuniny to complete the project, in an ideal scenerio I will increase experiment time at the same time will increase number of cross validation. Model was trained on very small dataset which couldnt explore the full potential, i could have extrapolate data using multiple methods as resampling training data, Adaptive Synthetic,Synthetic Minority Over-sampling Technique SMOTE etc. 
+```
+automl_settings = {
+    "experiment_timeout_minutes": 45,
+    "max_concurrent_iterations": 5,
+    "n_cross_validations":3,
+    "primary_metric" : 'accuracy'
+}
+
+#  Put your automl config here
+
+automl_config = AutoMLConfig(compute_target=compute_target,
+                             task = "classification",
+                             training_data=train_data,
+                             label_column_name="RiskLevel",   
+                             #path = project_folder,
+                             enable_early_stopping= True,
+                             featurization= 'auto',
+                             debug_log = "automl_errors.log",
+                             enable_onnx_compatible_models=True,
+                             **automl_settings
+                            )
+```
+
+#### How could you have improved it
+1. Prep data more by resampling training data, Adaptive Synthetic,Synthetic Minority Over-sampling Technique SMOTE 
+2. Change cross validation to reduce overfitting
+3. Increase experiment time out so that the run can go over more types of model and look for better reults
+
+[AutoMLConfig](https://docs.microsoft.com/en-us/python/api/azureml-train-automl-client/azureml.train.automl.automlconfig.automlconfig?view=azure-ml-py)
+The cross validation checks overfitting and for computational reasons pre-defined timeout was set to 45 Minutes  which limits number of Models that could be built.
+
+I have restricted the experiment time out to 45 minutes  in an ideal scenerio I will increase experiment time out at the same time will increase number of cross validation. Model was trained on very small dataset which couldnt explore the full potential, i could have extrapolate data using multiple methods as resampling training data, Adaptive Synthetic,Synthetic Minority Over-sampling Technique SMOTE etc. 
 
 *TODO* Remeber to provide screenshots of the `RunDetails` widget as well as a screenshot of the best model trained with it's parameters.
 ### Fig-5: AutoML experiment created 
