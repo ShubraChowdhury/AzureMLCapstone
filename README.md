@@ -767,8 +767,20 @@ Hyperdrive model provided an accuracy of 60.6%, at Regularization strength of 0.
 3. Change inverse regularization and experiment with additional choices  
  
 *TODO* Remeber to provide screenshots of the `RunDetails` widget as well as a screenshot of the best model trained with it's parameters.
-### Fig14: New  Compute Cluster for  Hyperdrive experiment
-![image](https://user-images.githubusercontent.com/32674614/159407569-52410d8d-d9b2-4dac-955d-a6750cb4fe29.png)
+###### Fig-15 : New  Compute Cluster for  Hyperdrive experiment
+![image](https://user-images.githubusercontent.com/32674614/159743420-e9f4a752-626a-46ea-9297-00ca3c00212b.png)
+###### Fig-16 : Hyperdrive experiment submitted and running
+![image](https://user-images.githubusercontent.com/32674614/159743760-ce2566bb-3912-451a-acd5-4bc00b3cdd3c.png)
+###### Fig-17 : Hyperdrive experiment created in Azure ML studio navigator
+![image](https://user-images.githubusercontent.com/32674614/159743944-5077d9f8-2060-4761-b861-5bfc7f9b72aa.png)
+###### Fig-18 : Hyperdrive experiment preparing
+![image](https://user-images.githubusercontent.com/32674614/159744035-49a38cff-eac7-4a48-a01a-9f232a23524c.png)
+###### Fig-19 : Hyperdrive experiment running
+![image](https://user-images.githubusercontent.com/32674614/159744253-1a79e6d4-5cfd-4cef-9b35-f580f74e0f16.png)
+###### Fig-20 : Hyperdrive experiment child run
+![image](https://user-images.githubusercontent.com/32674614/159744312-a1c6660d-1a71-415b-9f3c-943738a78f37.png)
+
+=====
 ### Fig15: Experiment Running
 ![image](https://user-images.githubusercontent.com/32674614/159407652-ab6beb91-aea7-42a7-a792-5d0b92050a59.png)
 ### Fig16: Experiment a run completed and a run in queue
