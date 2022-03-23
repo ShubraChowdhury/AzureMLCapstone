@@ -857,7 +857,7 @@ Best Run ID : HD_dacbae8c-454e-455d-a050-0ce6edfd9cd3_0
 ## Model Deployment
 *TODO*: Give an overview of the deployed model and instructions on how to query the endpoint with a sample input.
 
-From Models trained from the above two approaches, the AutoML Experiment gave accuracy of 82% while the HyperDrive Experiment gave accuracy of 60.6%. The performance of AutoML model exceeded the HyperDrive performance by close to 20%, My work was to register AutoML model as the best model and deployed as a web service and enable Application Insights . To test it out I have actually deployed both model.
+From Models trained from the above two approaches, the AutoML Experiment gave accuracy of 82% while the HyperDrive Experiment gave accuracy of 60.6%. The performance of AutoML model exceeded the HyperDrive performance by close to 20%, My work was to register AutoML model as the best model and deployed as a web service and enable Application Insights . 
 
 [Model Deployment Reference](https://docs.microsoft.com/en-us/azure/machine-learning/how-to-deploy-and-where?tabs=python)
 The workflow is similar no matter where you deploy your model:
