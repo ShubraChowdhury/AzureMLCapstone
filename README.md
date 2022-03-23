@@ -215,6 +215,93 @@ DURATION: Time taken for the current iteration.
 METRIC: The result of computing score on the fitted pipeline.
 BEST: The best observed score thus far.
 ********************************************************************************************
+
+ITER   PIPELINE                                       DURATION            METRIC      BEST
+    0   MaxAbsScaler LightGBM                          0:00:10             0.7904    0.7904
+    1   MaxAbsScaler XGBoostClassifier                 0:00:09             0.7485    0.7904
+    2   MaxAbsScaler ExtremeRandomTrees                0:00:10             0.6622    0.7904
+    3   SparseNormalizer XGBoostClassifier             0:00:09             0.7411    0.7904
+    4   MaxAbsScaler LightGBM                          0:00:09             0.7040    0.7904
+    5   MaxAbsScaler LightGBM                          0:00:09             0.7065    0.7904
+    6   StandardScalerWrapper XGBoostClassifier        0:00:09             0.7534    0.7904
+    7   MaxAbsScaler LogisticRegression                0:00:09             0.6326    0.7904
+    8   StandardScalerWrapper ExtremeRandomTrees       0:00:09             0.5585    0.7904
+   10   SparseNormalizer LightGBM                      0:00:09             0.6510    0.7904
+    9   StandardScalerWrapper XGBoostClassifier        0:00:08             0.7152    0.7904
+   11   StandardScalerWrapper XGBoostClassifier        0:00:09             0.7583    0.7904
+   12   MaxAbsScaler LogisticRegression                0:00:09             0.6276    0.7904
+   13   MaxAbsScaler SGD                               0:00:08             0.6277    0.7904
+   14   StandardScalerWrapper XGBoostClassifier        0:00:09             0.7152    0.7904
+   15   SparseNormalizer RandomForest                  0:00:10             0.7337    0.7904
+   20   TruncatedSVDWrapper RandomForest               0:00:04             0.7732    0.7904
+   16   StandardScalerWrapper LogisticRegression       0:00:09             0.6338    0.7904
+   17   StandardScalerWrapper RandomForest             0:00:09             0.7139    0.7904
+   21   StandardScalerWrapper XGBoostClassifier        0:03:37             0.7719    0.7904
+   18   StandardScalerWrapper XGBoostClassifier        0:00:09             0.7830    0.7904
+   19   TruncatedSVDWrapper RandomForest               0:00:10             0.6671    0.7904
+   22   SparseNormalizer XGBoostClassifier             0:00:04             0.7472    0.7904
+   23   StandardScalerWrapper LightGBM                 0:00:04             0.6436    0.7904
+   26   SparseNormalizer XGBoostClassifier             0:00:04             0.7300    0.7904
+   24   StandardScalerWrapper LogisticRegression       0:00:04             0.6202    0.7904
+   25   StandardScalerWrapper RandomForest             0:00:04             0.6522    0.7904
+   27   SparseNormalizer XGBoostClassifier             0:00:04             0.7509    0.7904
+   28   SparseNormalizer XGBoostClassifier             0:00:04             0.7398    0.7904
+   29   MaxAbsScaler ExtremeRandomTrees                0:00:04             0.6794    0.7904
+   30   TruncatedSVDWrapper LightGBM                   0:00:04             0.4685    0.7904
+   31   StandardScalerWrapper XGBoostClassifier        0:00:04             0.6892    0.7904
+   32   MaxAbsScaler RandomForest                      0:00:04             0.6436    0.7904
+   33   StandardScalerWrapper XGBoostClassifier        0:00:04             0.7053    0.7904
+   34                                                  0:00:00                nan    0.7904
+   35                                                  0:00:00                nan    0.7904
+   36                                                  0:00:00                nan    0.7904
+   37                                                  0:00:00                nan    0.7904
+   38    VotingEnsemble                                0:00:04             0.8175    0.8175
+{'runId': 'AutoML_093d98bd-0ffe-4170-a2f6-2f6941181eab',
+ 'target': 'automl-com-clst',
+ 'status': 'Completed',
+ 'startTimeUtc': '2022-03-22T18:33:14.704513Z',
+ 'endTimeUtc': '2022-03-22T18:57:29.706139Z',
+ 'services': {},
+ 'warnings': [{'source': 'JasmineService',
+   'message': 'No scores improved over last 20 iterations, so experiment stopped early. This early stopping behavior can be disabled by setting enable_early_stopping = False in AutoMLConfig for notebook/python SDK runs.'}],
+ 'properties': {'num_iterations': '1000',
+  'training_type': 'TrainFull',
+  'acquisition_function': 'EI',
+  'primary_metric': 'accuracy',
+  'train_split': '0',
+  'acquisition_parameter': '0',
+  'num_cross_validation': '3',
+  'target': 'automl-com-clst',
+  'AMLSettingsJsonString': '{"path":null,"name":"capstone-automl-experiment","subscription_id":"6971f5ac-8af1-446e-8034-05acea24681f","resource_group":"aml-quickstarts-189674","workspace_name":"quick-starts-ws-189674","region":"southcentralus","compute_target":"automl-com-clst","spark_service":null,"azure_service":"remote","many_models":false,"pipeline_fetch_max_batch_size":1,"enable_batch_run":true,"enable_run_restructure":false,"start_auxiliary_runs_before_parent_complete":false,"enable_code_generation":false,"iterations":1000,"primary_metric":"accuracy","task_type":"classification","positive_label":null,"data_script":null,"test_size":0.0,"test_include_predictions_only":false,"validation_size":0.0,"n_cross_validations":3,"y_min":null,"y_max":null,"num_classes":null,"featurization":"auto","_ignore_package_version_incompatibilities":false,"is_timeseries":false,"max_cores_per_iteration":1,"max_concurrent_iterations":5,"iteration_timeout_minutes":null,"mem_in_mb":null,"enforce_time_on_windows":false,"experiment_timeout_minutes":45,"experiment_exit_score":null,"whitelist_models":null,"blacklist_algos":["TensorFlowLinearClassifier","TensorFlowDNN"],"supported_models":["SVM","MultinomialNaiveBayes","RandomForest","TensorFlowDNN","TensorFlowLinearClassifier","BernoulliNaiveBayes","LogisticRegression","LinearSVM","SGD","TabnetClassifier","DecisionTree","KNN","ExtremeRandomTrees","XGBoostClassifier","LightGBM","AveragedPerceptronClassifier","GradientBoosting"],"private_models":[],"auto_blacklist":true,"blacklist_samples_reached":false,"exclude_nan_labels":true,"verbosity":20,"_debug_log":"azureml_automl.log","show_warnings":false,"model_explainability":true,"service_url":null,"sdk_url":null,"sdk_packages":null,"enable_onnx_compatible_models":true,"enable_split_onnx_featurizer_estimator_models":false,"vm_type":"STANDARD_D2_V2","telemetry_verbosity":20,"send_telemetry":true,"enable_dnn":false,"scenario":"SDK-1.13.0","environment_label":null,"save_mlflow":false,"enable_categorical_indicators":false,"force_text_dnn":false,"enable_feature_sweeping":false,"enable_early_stopping":true,"early_stopping_n_iters":10,"arguments":null,"dataset_id":"b7c7f4cc-a689-4304-8487-1b737d69e2c5","hyperdrive_config":null,"validation_dataset_id":null,"run_source":null,"metrics":null,"enable_metric_confidence":false,"enable_ensembling":true,"enable_stack_ensembling":false,"ensemble_iterations":15,"enable_tf":false,"enable_subsampling":null,"subsample_seed":null,"enable_nimbusml":false,"enable_streaming":false,"force_streaming":false,"track_child_runs":true,"allowed_private_models":[],"label_column_name":"RiskLevel","weight_column_name":null,"cv_split_column_names":null,"enable_local_managed":false,"_local_managed_run_id":null,"cost_mode":1,"lag_length":0,"metric_operation":"maximize","preprocess":true}',
+  'DataPrepJsonString': '{\\"training_data\\": {\\"datasetId\\": \\"b7c7f4cc-a689-4304-8487-1b737d69e2c5\\"}, \\"datasets\\": 0}',
+  'EnableSubsampling': None,
+  'runTemplate': 'AutoML',
+  'azureml.runsource': 'automl',
+  'display_task_type': 'classification',
+  'dependencies_versions': '{"azureml-widgets": "1.38.0", "azureml-train": "1.38.0", "azureml-train-restclients-hyperdrive": "1.38.0", "azureml-train-core": "1.38.0", "azureml-train-automl": "1.38.0", "azureml-train-automl-runtime": "1.38.0", "azureml-train-automl-client": "1.38.0", "azureml-tensorboard": "1.38.0", "azureml-telemetry": "1.38.0", "azureml-sdk": "1.38.0", "azureml-responsibleai": "1.38.0", "azureml-pipeline": "1.38.0", "azureml-pipeline-steps": "1.38.0", "azureml-pipeline-core": "1.38.0", "azureml-opendatasets": "1.38.0", "azureml-mlflow": "1.38.0", "azureml-interpret": "1.38.0", "azureml-inference-server-http": "0.4.2", "azureml-explain-model": "1.38.0", "azureml-defaults": "1.38.0", "azureml-dataset-runtime": "1.38.0", "azureml-dataprep": "2.26.0", "azureml-dataprep-rslex": "2.2.0", "azureml-dataprep-native": "38.0.0", "azureml-datadrift": "1.38.0", "azureml-core": "1.38.0", "azureml-contrib-services": "1.38.0", "azureml-contrib-server": "1.38.0", "azureml-contrib-reinforcementlearning": "1.38.0", "azureml-contrib-pipeline-steps": "1.38.0", "azureml-contrib-notebook": "1.38.0", "azureml-contrib-fairness": "1.38.0", "azureml-contrib-dataset": "1.38.0", "azureml-contrib-automl-pipeline-steps": "1.38.0", "azureml-cli-common": "1.38.0", "azureml-automl-runtime": "1.38.0", "azureml-automl-dnn-nlp": "1.38.0", "azureml-automl-core": "1.38.0", "azureml-accel-models": "1.38.0"}',
+  '_aml_system_scenario_identification': 'Remote.Parent',
+  'ClientType': 'SDK',
+  'environment_cpu_name': 'AzureML-AutoML',
+  'environment_cpu_label': 'py36',
+  'environment_gpu_name': 'AzureML-AutoML-GPU',
+  'environment_gpu_label': 'py36',
+  'root_attribution': 'automl',
+  'attribution': 'AutoML',
+  'Orchestrator': 'AutoML',
+  'CancelUri': 'https://southcentralus.api.azureml.ms/jasmine/v1.0/subscriptions/6971f5ac-8af1-446e-8034-05acea24681f/resourceGroups/aml-quickstarts-189674/providers/Microsoft.MachineLearningServices/workspaces/quick-starts-ws-189674/experimentids/4cb5e02a-81a8-406d-8de0-149de903dd72/cancel/AutoML_093d98bd-0ffe-4170-a2f6-2f6941181eab',
+  'ClientSdkVersion': '1.38.0',
+  'snapshotId': '00000000-0000-0000-0000-000000000000',
+  'SetupRunId': 'AutoML_093d98bd-0ffe-4170-a2f6-2f6941181eab_setup',
+  'SetupRunContainerId': 'dcid.AutoML_093d98bd-0ffe-4170-a2f6-2f6941181eab_setup',
+  'FeaturizationRunJsonPath': 'featurizer_container.json',
+  'FeaturizationRunId': 'AutoML_093d98bd-0ffe-4170-a2f6-2f6941181eab_featurize',
+  'ProblemInfoJsonString': '{"dataset_num_categorical": 0, "is_sparse": true, "subsampling": false, "has_extra_col": true, "dataset_classes": 3, "dataset_features": 54, "dataset_samples": 811, "single_frequency_class_detected": false}',
+  'ModelExplainRunId': 'AutoML_093d98bd-0ffe-4170-a2f6-2f6941181eab_ModelExplain'},
+ 'inputDatasets': [{'dataset': {'id': 'b7c7f4cc-a689-4304-8487-1b737d69e2c5'}, 'consumptionDetails': {'type': 'RunInput', 'inputName': 'training_data', 'mechanism': 'Direct'}}],
+ 'outputDatasets': [],
+ 'logFiles': {},
+ 'submittedBy': 'ODL_User 189674'}
+
 ```
 #### Fig-2: Model output
 ![image](https://user-images.githubusercontent.com/32674614/159717922-bd4ed23b-e81c-4c67-90ee-59fabc1149d5.png)
