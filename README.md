@@ -1,11 +1,7 @@
 #  Udacity Capstone Project ,Machine Learning Engineer with Microsoft Azure
 
-This capstone project uses Azure ML platform and allows two forms of model building and deployment. Model used in this project helps to predict Maternal Health Risk based on multiple factors.
+This capstone project uses Azure ML platform and allows two forms of model building and deployment.
 
-## Project Set Up and Installation
-This project uses Azure ML environment provided by Udacity. Some of the components are Compute Instance(which gets created by the scripts deployed by Udacity team), compute cluster (which is created as a part of the project), notebook, Experiments, AtuoML, Endpoints, Datastore, Environment etc.
-
-## Overview
 In this project I will be predicting Maternal "Risk Level" based on Age, SystolicBP, DiastolicBP,BS,BodyTemp,HeartRate. In order to predict Maternal "Risk Level" I will be using the dataset available in UCI's Machine Learning repository.
 In this project, we will be using Azure Machine Learning Studio to create a model and  then deploy the best model. As per project guidelines I have used two approaches in this project to create a model:
 - Using Azure AutoML . This experiment is named as 'capstone-automl-experiment'
@@ -22,7 +18,15 @@ In my experiments the AutoML model produces the best results which has 21.2% hig
 
 Once the AutoML model is deployed I have validated existence of  scoring_uri and swagger_uri . Once this was validated I had send a request to the web service that was deployed to tested the result. The request sent contains the following data "Age": 25,"SystolicBP":130 ,"DiastolicBP":80 ,"BS": 15,"BodyTemp": 98,"HeartRate": 86 which produced a RiskLevel of 'high risk' and this shows that the model was deployed and webservices are responding f.
 
+## Project Set Up and Installation
+This project uses Azure ML environment provided by Udacity. Some of the components are Compute Instance(which gets created by the scripts deployed by Udacity team), compute cluster (which is created as a part of the project), notebook, Experiments, AtuoML, Endpoints, Datastore, Environment etc.
+
+
+
+
 ## Dataset
+
+### Overview
 Dataset used in this project is [Maternal Health Risk data from UCI's ML Dataset Repository](https://archive.ics.uci.edu/ml/machine-learning-databases/00639/Maternal%20Health%20Risk%20Data%20Set.csv). Data contains the following fields
 - Age
 - SystolicBP
