@@ -631,12 +631,17 @@ The cross validation checks overfitting and for computational reasons pre-define
 I have restricted the experiment time out to 45 minutes  in an ideal scenerio I will increase experiment time out at the same time will increase number of cross validation. Model was trained on very small dataset which couldnt explore the full potential, i could have extrapolate data using multiple methods as resampling training data, Adaptive Synthetic,Synthetic Minority Over-sampling Technique SMOTE etc. 
 
 *TODO* Remeber to provide screenshots of the `RunDetails` widget as well as a screenshot of the best model trained with it's parameters.
-### Fig-5: AutoML experiment created 
-![image](https://user-images.githubusercontent.com/32674614/159400814-24218e63-483d-4885-9869-4c563fa13f16.png)
-### Fig-6: AutoML experiment running
-![image](https://user-images.githubusercontent.com/32674614/159400887-ce756000-1851-4457-bbe0-dcca5cc81adf.png)
-### Fig-7: AutoML child runs in progress
-![image](https://user-images.githubusercontent.com/32674614/159400958-e2c46ddc-b459-4ae9-bd31-2d71ccaa431b.png)
+##### Fig-3: AutoML Creation of Compute Cluster
+![image](https://user-images.githubusercontent.com/32674614/159729578-8bf948a7-0971-4c60-8f1c-177484fc5051.png)
+##### Fig-4: Compute Cluster Created
+![image](https://user-images.githubusercontent.com/32674614/159730489-3d79880b-a976-4bfe-b399-58605d75c939.png)
+##### Fig-5: AutoML Experiment Submitted
+![image](https://user-images.githubusercontent.com/32674614/159731055-9b09df92-8a85-42bb-a23e-c4b462f58b19.png)
+###### Fig-6: AutoML experiment running
+![image](https://user-images.githubusercontent.com/32674614/159731445-fe705024-3ab9-410e-9c5b-8a142ccf5202.png)
+##### Fig-7: AutoML child runs in progress
+![image](https://user-images.githubusercontent.com/32674614/159731649-a063878e-5e60-405d-8487-7e941141cba6.png)
+
 ### Fig-8: Best AutoML model `VotingEnsemble`
 ![image](https://user-images.githubusercontent.com/32674614/159400994-89a43ed3-102b-42c9-8394-7df65a4dd1b2.png)
 ### Fig-9: Accuracy for `VotingEnsemble` 
