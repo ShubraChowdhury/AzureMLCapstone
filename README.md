@@ -606,8 +606,8 @@ automl_config = AutoMLConfig(compute_target=compute_target,
 1. Prep data and address missing values, resampling training data, Adaptive Synthetic,Synthetic Minority Over-sampling Technique SMOTE 
 ##### Fig-2: Missing Data
 ![image](https://user-images.githubusercontent.com/32674614/159722672-d94f7325-385b-4160-8527-940976a4b1a4.png)
-3. Change cross validation to reduce overfitting
-4. Increase experiment time out so that the run can go over more types of model and look for better reults
+2. Change cross validation to reduce overfitting
+3. Increase experiment time out so that the run can go over more types of model and look for better reults
 
 [AutoMLConfig](https://docs.microsoft.com/en-us/python/api/azureml-train-automl-client/azureml.train.automl.automlconfig.automlconfig?view=azure-ml-py)
 The cross validation checks overfitting and for computational reasons pre-defined timeout was set to 45 Minutes  which limits number of Models that could be built.
