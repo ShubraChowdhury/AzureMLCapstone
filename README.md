@@ -33,11 +33,23 @@ The above information is used by the models to predict "Risk Level"
 
 
 ### Overview
+In this project I will be predicting Maternal "Risk Level" based on Age, SystolicBP, DiastolicBP,BS,BodyTemp,HeartRate. In order to predict Maternal "Risk Level" I will be using the dataset available in UCI's Machine Learning repository.
 In this project, we will be using Azure Machine Learning Studio to create a model and  then deploy the best model. As per project guidelines I have used two approaches in this project to create a model:
 - Using Azure AutoML . This experiment is named as 'capstone-automl-experiment'
 - Using Azure HyperDrive. This experiment is named as 'capstone_hyperdrive_exp'
 And the best model from any of the above methods will be deployed and then consumed.
 Azure AutoML model is build using jupyter notebook "automl.ipynb" and  Azure HyperDrive is build using jupyter notebook "hyperparameter_tuning.ipynb"
+
+I have created a compute cluster for both Auto ML and Hyperdrive. Initial step is to upload Maternal Health Risk data set and register the same in Azure machine learning studio. 
+For AutoML I have defined the automl settings and AutoMLConfig which uses classification as task and experiment runs for maximum of 45 minutes.Next I have submitted the experiment to automatically train the data dataset and come up with a best model and explanation. In this case AutoML has trained on 38 models and come up with an accuracy of 81.8%
+
+As a next step I have worked on model using HyperDrive, in this case the entry script is through train.py which uses LogisticRegression with BanditPolicy used as early termination policy and RandomParameterSampling for hyperparameter sampling.Following this the experiment was submitted and an accuracy of 60.6% was achieved.
+
+In my experiments the AutoML model produces the best results which has 21.2% higher accuracy than the Hyperdrive model. Based on the results I have deployed the best model that is the AutoML model. Deployment involves Registering the model,Prepare an entry script (scoreautoml.py) , Prepare an inference configuration (this sources in the environment defined in "project_environment.yml"),Deploy the model .
+
+Once the AutoML model is deployed I have validated existence of  scoring_uri and swagger_uri . Once this was validated I had send a request to the web service that was deployed to tested the result. The request sent contains the following data "Age": 25,"SystolicBP":130 ,"DiastolicBP":80 ,"BS": 15,"BodyTemp": 98,"HeartRate": 86 which produced a RiskLevel of 'high risk' and this shows that the model was deployed and webservices are responding.
+
+
 
 ### Task
 My task involves predicting Maternal "Risk Level" based on Age, SystolicBP, DiastolicBP,BS,BodyTemp,HeartRate. Please refer above for data profile and data distribution.
