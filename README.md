@@ -636,24 +636,49 @@ I have restricted the experiment time out to 45 minutes  in an ideal scenerio I 
 ##### Fig-4: Compute Cluster Created
 ![image](https://user-images.githubusercontent.com/32674614/159730489-3d79880b-a976-4bfe-b399-58605d75c939.png)
 ##### Fig-5: AutoML Experiment Submitted
-![image](https://user-images.githubusercontent.com/32674614/159731055-9b09df92-8a85-42bb-a23e-c4b462f58b19.png)
-###### Fig-6: AutoML experiment running
-![image](https://user-images.githubusercontent.com/32674614/159731445-fe705024-3ab9-410e-9c5b-8a142ccf5202.png)
-##### Fig-7: AutoML child runs in progress
-![image](https://user-images.githubusercontent.com/32674614/159731649-a063878e-5e60-405d-8487-7e941141cba6.png)
+![image](https://user-images.githubusercontent.com/32674614/159732107-467bcd2b-d1d5-40a8-b2bf-52cd18b04969.png)
+![image](https://user-images.githubusercontent.com/32674614/159732150-b58332fc-294a-4aaa-9c07-c462f99d483f.png)
 
-### Fig-8: Best AutoML model `VotingEnsemble`
-![image](https://user-images.githubusercontent.com/32674614/159400994-89a43ed3-102b-42c9-8394-7df65a4dd1b2.png)
-### Fig-9: Accuracy for `VotingEnsemble` 
-![image](https://user-images.githubusercontent.com/32674614/159401064-4921d2ce-3e26-4bac-b9f3-c655c91f459a.png)
-### Fig-10: Feature Importance with BS has the highest
-![image](https://user-images.githubusercontent.com/32674614/159401125-b5f27166-c7ba-4e00-b37c-1251b81d0b16.png)
-### Fig11.1: Model Metrics
-![image](https://user-images.githubusercontent.com/32674614/159401273-d19e3ed6-4669-4036-93cf-26a84856d1df.png)
-### Fig11.2: Model Metrics continued..
-![image](https://user-images.githubusercontent.com/32674614/159401312-59fc0ca6-e397-42bb-bb04-c25022165789.png)
-### Fig11.3: Model Metrics continued..
-![image](https://user-images.githubusercontent.com/32674614/159401357-6bfbfbcd-d548-4441-8d75-f3c585c593b3.png)
+###### Fig-6: AutoML experiment running
+![image](https://user-images.githubusercontent.com/32674614/159734262-5d612e90-9d75-4706-b9f4-06ab8efe57d3.png)
+
+![image](https://user-images.githubusercontent.com/32674614/159732259-5bdde1ca-cdd5-42a6-a2ac-5ac7ba0dbe3c.png)
+![image](https://user-images.githubusercontent.com/32674614/159732329-38bb84c4-a8c2-48cd-889d-5421febb8b41.png)
+![image](https://user-images.githubusercontent.com/32674614/159732385-a81f6d29-ac15-4c11-996c-f58ba7741ba3.png)
+![image](https://user-images.githubusercontent.com/32674614/159732404-bad2318d-2b7e-46bb-9a2e-cf707b000223.png)
+![image](https://user-images.githubusercontent.com/32674614/159732557-4dec997d-306d-4dd9-bb1f-ea0b3403cbd1.png)
+![image](https://user-images.githubusercontent.com/32674614/159732650-02479238-f7c2-429d-8ebe-dfbe8e3be34f.png)
+
+
+
+##### Fig-7: AutoML child runs in progress
+![image](https://user-images.githubusercontent.com/32674614/159732480-a13ea6a1-7596-4616-a984-e9652c223f7c.png)
+
+###### Fig-8: AutoMl run completed
+![image](https://user-images.githubusercontent.com/32674614/159732801-9d3c18c0-a8f6-4247-924f-66b40ea1bf1d.png)
+
+
+###### Fig-9: Best AutoML model `VotingEnsemble`
+![image](https://user-images.githubusercontent.com/32674614/159732954-985c45c8-579c-4515-84b9-4227e317c08d.png)
+
+###### Fig-10: Accuracy for `VotingEnsemble` 
+![image](https://user-images.githubusercontent.com/32674614/159733149-c93ef3d1-2c99-4052-920b-8c829384818d.png)
+![image](https://user-images.githubusercontent.com/32674614/159733199-c36b4f86-9f3d-4191-bf71-a228dbf29525.png)
+
+
+###### Fig-10: Feature Importance with BS has the highest
+![image](https://user-images.githubusercontent.com/32674614/159733872-fb791663-d526-465f-8812-40248cd0cc27.png)
+
+###### Fig11.1: Model Metrics
+![image](https://user-images.githubusercontent.com/32674614/159733378-32ff390d-a928-49af-9af9-bddd8c29c47a.png)
+###### Fig11.2: Model Metrics continued..
+![image](https://user-images.githubusercontent.com/32674614/159733497-4e64fbe5-2093-4bd4-a1b8-c488ef075ad9.png)
+###### Fig11.3: Model Metrics continued..
+![image](https://user-images.githubusercontent.com/32674614/159733778-a9074f31-e6a9-4abd-b178-0c0c630e9c1b.png)
+
+###### Fig-12: Data Transformation Preview
+![image](https://user-images.githubusercontent.com/32674614/159734054-35dda918-910e-41f0-975c-97f7eee4b4e1.png)
+
 ### Fig12: Endpoint View
 ![image](https://user-images.githubusercontent.com/32674614/159401495-80dc16e0-a74c-4122-bb00-1d866f979bde.png)
 ### Fig13: `VotingEnsemble` Deployed 
