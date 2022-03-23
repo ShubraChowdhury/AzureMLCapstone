@@ -41,7 +41,7 @@ The above information is used by the models to predict "Risk Level"
 ### Task
 My task involves predicting Maternal "Risk Level" based on Age, SystolicBP, DiastolicBP,BS,BodyTemp,HeartRate. 
 In order to achieve the task I have to find the best model between AutoML and Hyperdrive models.
-AutoML involves the following task:
+#### AutoML involves the following task:
 1. Import all necessary packages
 2. Create a Workspace and experiment
 3. Create a compute instance
@@ -50,7 +50,7 @@ AutoML involves the following task:
 6. Define automl_settings  and AutoMLConfig settings , I am using classification as task and accuracy as the primary metrics
 7. Submit the AutoMl experiment
 8. Get run details , run status and best metrics
-Hyperdrive involves the following task:
+#### Hyperdrive involves the following task:
 1. Import all necessary packages
 2. Create a Workspace and experiment
 3. Create a compute instance
@@ -59,7 +59,7 @@ Hyperdrive involves the following task:
 6. Define HyperDriveConfig with accuracy as the primary metrics
 7. Submit the experiment
 8. Get run details , run status and best metrics
-Following task will be after determining the best metrics
+#### Following task will be after determining the best metrics
 1. Register the model
 2. Define InferenceConfig including entry script and sourcing environment
 3. Define AciWebservice configurations
