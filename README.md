@@ -172,31 +172,31 @@ AutoML experiment in 45 minutes has trained data on a total of 38 models , out o
 
 ![image](https://user-images.githubusercontent.com/32674614/159717922-bd4ed23b-e81c-4c67-90ee-59fabc1149d5.png)
 ![image](https://user-images.githubusercontent.com/32674614/159718091-4bf195f3-cb36-4173-81d1-7b1168f7abc8.png)
-![image](https://user-images.githubusercontent.com/32674614/159718407-550cc81a-d693-41f9-8068-793a7e0cd660.png)
+![image](https://user-images.githubusercontent.com/32674614/159718617-abdd92cc-d599-43ef-b617-edf6c45021b7.png)
 
 
 Following are the results:
-- average_precision_score_micro 0.8730812741180376
-- AUC_macro 0.9226793705273387
-- average_precision_score_weighted 0.8647659722703661
-- weighted_accuracy 0.8226841844282767
-- f1_score_weighted 0.8189540322232832
-- recall_score_weighted 0.8199899776775545
-- precision_score_weighted 0.819593453577947
-- recall_score_micro 0.8199899776775545
-- precision_score_macro 0.8228526959653496
-- recall_score_macro 0.8187646372860341
-- balanced_accuracy 0.8187646372860341
-- log_loss 0.6138810951918391
-- AUC_weighted 0.9189162547687276
-- matthews_correlation 0.7239247750212834
-- f1_score_macro 0.8199474069639092
-- average_precision_score_macro 0.8675376617497034
-- accuracy 0.8199899776775545
-- precision_score_micro 0.8199899776775545
-- norm_macro_recall 0.7281469559290512
-- AUC_micro 0.9290838330968461
-- f1_score_micro 0.8199899776775545
+- f1_score_weighted 0.816520723030668
+- f1_score_macro 0.8181120773643548
+- precision_score_weighted 0.8176578649383873
+- average_precision_score_micro 0.8745382040360331
+- norm_macro_recall 0.7246959271503628
+- AUC_macro 0.923683144961295
+- recall_score_weighted 0.8175162862739739
+- balanced_accuracy 0.8164639514335752
+- accuracy 0.8175162862739739
+- AUC_weighted 0.9200515581213738
+- precision_score_macro 0.8219195413392303
+- matthews_correlation 0.7203152947685713
+- recall_score_macro 0.8164639514335752
+- weighted_accuracy 0.8199937719822659
+- recall_score_micro 0.8175162862739739
+- average_precision_score_weighted 0.8673470748250652
+- f1_score_micro 0.8175162862739739
+- log_loss 0.6331436494353994
+- AUC_micro 0.929468459815268
+- average_precision_score_macro 0.8697373123979363
+- precision_score_micro 0.8175162862739739
 
 [AutoMLConfig](https://docs.microsoft.com/en-us/python/api/azureml-train-automl-client/azureml.train.automl.automlconfig.automlconfig?view=azure-ml-py)
 The cross validation checks overfitting and for computational reasons pre-defined timeout was set to 20 Minutes  which limits number of Models that could be built.Model has Accuracy as primary metric.
