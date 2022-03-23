@@ -198,6 +198,248 @@ Following are the results:
 - average_precision_score_macro 0.8697373123979363
 - precision_score_micro 0.8175162862739739
 
+Fitted Model Steps
+```
+[('datatransformer', DataTransformer(
+    task='classification',
+    is_onnx_compatible=True,
+    enable_feature_sweeping=False,
+    enable_dnn=False,
+    force_text_dnn=False,
+    feature_sweeping_timeout=86400,
+    featurization_config=None,
+    is_cross_validation=True,
+    feature_sweeping_config={}
+)), ('prefittedsoftvotingclassifier', PreFittedSoftVotingClassifier(
+    estimators=[('0', Pipeline(
+        memory=None,
+        steps=[('maxabsscaler', MaxAbsScaler(
+            copy=True
+        )), ('lightgbmclassifier', LightGBMClassifier(
+            min_data_in_leaf=20,
+            random_state=None,
+            n_jobs=1,
+            problem_info=ProblemInfo(
+                gpu_training_param_dict={'processing_unit_type': 'cpu'}
+            )
+        ))],
+        verbose=False
+    )), ('18', Pipeline(
+        memory=None,
+        steps=[('standardscalerwrapper', StandardScalerWrapper(
+            copy=True,
+            with_mean=False,
+            with_std=False
+        )), ('xgboostclassifier', XGBoostClassifier(
+            random_state=0,
+            n_jobs=1,
+            problem_info=ProblemInfo(
+                gpu_training_param_dict={'processing_unit_type': 'cpu'}
+            ),
+            booster='gbtree',
+            colsample_bytree=0.7,
+            eta=0.1,
+            gamma=0.1,
+            max_depth=9,
+            max_leaves=511,
+            n_estimators=25,
+            objective='reg:logistic',
+            reg_alpha=0,
+            reg_lambda=1.7708333333333335,
+            subsample=0.9,
+            tree_method='auto'
+        ))],
+        verbose=False
+    )), ('20', Pipeline(
+        memory=None,
+        steps=[('truncatedsvdwrapper', TruncatedSVDWrapper(
+            n_components=0.7026315789473684,
+            random_state=None
+        )), ('randomforestclassifier', RandomForestClassifier(
+            bootstrap=False,
+            ccp_alpha=0.0,
+            class_weight='balanced',
+            criterion='gini',
+            max_depth=None,
+            max_features='log2',
+            max_leaf_nodes=None,
+            max_samples=None,
+            min_impurity_decrease=0.0,
+            min_impurity_split=None,
+            min_samples_leaf=0.01,
+            min_samples_split=0.01,
+            min_weight_fraction_leaf=0.0,
+            n_estimators=200,
+            n_jobs=1,
+            oob_score=False,
+            random_state=None,
+            verbose=0,
+            warm_start=False
+        ))],
+        verbose=False
+    )), ('21', Pipeline(
+        memory=None,
+        steps=[('standardscalerwrapper', StandardScalerWrapper(
+            copy=True,
+            with_mean=False,
+            with_std=False
+        )), ('xgboostclassifier', XGBoostClassifier(
+            random_state=0,
+            n_jobs=1,
+            problem_info=ProblemInfo(
+                gpu_training_param_dict={'processing_unit_type': 'cpu'}
+            ),
+            booster='gbtree',
+            colsample_bytree=0.5,
+            eta=0.2,
+            gamma=0,
+            max_depth=7,
+            max_leaves=7,
+            n_estimators=25,
+            objective='reg:logistic',
+            reg_alpha=0,
+            reg_lambda=0.20833333333333334,
+            subsample=1,
+            tree_method='auto'
+        ))],
+        verbose=False
+    )), ('11', Pipeline(
+        memory=None,
+        steps=[('standardscalerwrapper', StandardScalerWrapper(
+            copy=True,
+            with_mean=False,
+            with_std=False
+        )), ('xgboostclassifier', XGBoostClassifier(
+            random_state=0,
+            n_jobs=1,
+            problem_info=ProblemInfo(
+                gpu_training_param_dict={'processing_unit_type': 'cpu'}
+            ),
+            booster='gbtree',
+            colsample_bytree=0.6,
+            eta=0.3,
+            gamma=0,
+            max_depth=6,
+            max_leaves=0,
+            n_estimators=10,
+            objective='reg:logistic',
+            reg_alpha=0.3125,
+            reg_lambda=2.3958333333333335,
+            subsample=1,
+            tree_method='auto'
+        ))],
+        verbose=False
+    )), ('6', Pipeline(
+        memory=None,
+        steps=[('standardscalerwrapper', StandardScalerWrapper(
+            copy=True,
+            with_mean=False,
+            with_std=False
+        )), ('xgboostclassifier', XGBoostClassifier(
+            random_state=0,
+            n_jobs=1,
+            problem_info=ProblemInfo(
+                gpu_training_param_dict={'processing_unit_type': 'cpu'}
+            ),
+            booster='gbtree',
+            colsample_bytree=0.5,
+            eta=0.3,
+            gamma=0,
+            max_depth=10,
+            max_leaves=255,
+            n_estimators=10,
+            objective='reg:logistic',
+            reg_alpha=0,
+            reg_lambda=0.10416666666666667,
+            subsample=0.7,
+            tree_method='auto'
+        ))],
+        verbose=False
+    )), ('27', Pipeline(
+        memory=None,
+        steps=[('sparsenormalizer', Normalizer(
+            copy=True,
+            norm='l1'
+        )), ('xgboostclassifier', XGBoostClassifier(
+            random_state=0,
+            n_jobs=1,
+            problem_info=ProblemInfo(
+                gpu_training_param_dict={'processing_unit_type': 'cpu'}
+            ),
+            booster='gbtree',
+            colsample_bytree=0.6,
+            eta=0.3,
+            gamma=0,
+            grow_policy='lossguide',
+            max_bin=255,
+            max_depth=6,
+            max_leaves=0,
+            n_estimators=25,
+            objective='reg:logistic',
+            reg_alpha=1.7708333333333335,
+            reg_lambda=1.25,
+            subsample=0.8,
+            tree_method='hist'
+        ))],
+        verbose=False
+    )), ('3', Pipeline(
+        memory=None,
+        steps=[('sparsenormalizer', Normalizer(
+            copy=True,
+            norm='l2'
+        )), ('xgboostclassifier', XGBoostClassifier(
+            random_state=0,
+            n_jobs=1,
+            problem_info=ProblemInfo(
+                gpu_training_param_dict={'processing_unit_type': 'cpu'}
+            ),
+            booster='gbtree',
+            colsample_bytree=0.7,
+            eta=0.01,
+            gamma=0.01,
+            max_depth=7,
+            max_leaves=31,
+            n_estimators=10,
+            objective='reg:logistic',
+            reg_alpha=2.1875,
+            reg_lambda=1.0416666666666667,
+            subsample=1,
+            tree_method='auto'
+        ))],
+        verbose=False
+    )), ('31', Pipeline(
+        memory=None,
+        steps=[('standardscalerwrapper', StandardScalerWrapper(
+            copy=True,
+            with_mean=False,
+            with_std=False
+        )), ('xgboostclassifier', XGBoostClassifier(
+            random_state=0,
+            n_jobs=1,
+            problem_info=ProblemInfo(
+                gpu_training_param_dict={'processing_unit_type': 'cpu'}
+            ),
+            booster='gbtree',
+            colsample_bytree=0.5,
+            eta=0.2,
+            gamma=5,
+            max_depth=9,
+            max_leaves=0,
+            n_estimators=25,
+            objective='reg:logistic',
+            reg_alpha=0.3125,
+            reg_lambda=0.4166666666666667,
+            subsample=0.5,
+            tree_method='auto'
+        ))],
+        verbose=False
+    ))],
+    weights=[0.14285714285714285, 0.14285714285714285, 0.14285714285714285, 0.07142857142857142, 0.07142857142857142, 0.07142857142857142, 0.07142857142857142, 0.14285714285714285, 0.14285714285714285],
+    flatten_transform=None,
+    classification_labels=array([0, 1, 2])
+))]
+```
+
 [AutoMLConfig](https://docs.microsoft.com/en-us/python/api/azureml-train-automl-client/azureml.train.automl.automlconfig.automlconfig?view=azure-ml-py)
 The cross validation checks overfitting and for computational reasons pre-defined timeout was set to 20 Minutes  which limits number of Models that could be built.Model has Accuracy as primary metric.
 
